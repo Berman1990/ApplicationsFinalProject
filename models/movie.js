@@ -25,3 +25,29 @@ var movieSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Movie', movieSchema);
+var movieModel = mongoose.model('Movie');
+
+module.exports.removeById = function(id, callback){
+    movieModel.findByIdAndRemove(id, function (err, doc) {
+        if(err){
+            callback(err);
+        }
+        else{
+            callback(null);
+        }
+    });
+};
+
+module.exports.add = function(compModel, callback){
+    var newComputer = new movieModel(compModel);
+
+    newComputer.save(function (err, rowAffected) {
+        if(err){
+            callback(err);
+        }
+        else{
+            callback(null);
+        }
+    });
+};
+

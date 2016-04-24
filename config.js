@@ -19,7 +19,7 @@ module.exports = {
     /*
      * The MongoDB URL
      * */
-    MONGO_URI: process.env.MONGOLAB_URI || process.env.MONGO_URI || 'mongodb://13.80.71.203:27017/finalProject',
+    MONGO_URI: process.env.MONGOLAB_URI || process.env.MONGO_URI || 'mongodb://13.80.13.25:27017/finalProject',
 
     /*
      * The Facebook App Secret.

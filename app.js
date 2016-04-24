@@ -6,17 +6,21 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var config = require('./config');
+var app = express();
 
 mongoose.connect(config.MONGO_URI);
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
 
-var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './client/views'));
 app.set('view engine', 'ejs');
+
+// setup app settings and session
+app.use(express.static(__dirname + '/client'));
+app.use(cookieParser());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -60,6 +64,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.route('/sdfsd')
-    .post()
 module.exports = app;
