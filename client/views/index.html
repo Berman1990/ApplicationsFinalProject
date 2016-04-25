@@ -15,7 +15,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/one-page-wonder.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/mapCss.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +28,10 @@
 </head>
 
 <body>
-
+<!--
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCowyTffXLSPvOF-0X3fmYOX_Xf9PPHVys&callback=initMap" async defer></script>
+-->
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -39,19 +43,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">World Cinema</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#about">About</a>
+                        <a href="#toprated">Top Rated</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="#moviessearch">Movies Search</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#cinemasmap">Cinemas Map</a>
+                    </li>
+                    <li>
+                        <a href="#about"></a>
                     </li>
                 </ul>
             </div>
@@ -64,8 +71,8 @@
     <header class="header-image">
         <div class="headline">
             <div class="container">
-                <h1>One Page Wonder</h1>
-                <h2>Will Knock Your Socks Off</h2>
+                <h1>World Cinema</h1>
+                <h2>Everything You Need To Know About Movies And Cinemas</h2>
             </div>
         </div>
     </header>
@@ -73,21 +80,8 @@
     <!-- Page Content -->
     <div class="container">
 
-        <hr class="featurette-divider">
-
-        <!-- First Featurette -->
-        <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">This First Heading
-                <span class="text-muted">Will Catch Your Eye</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Second Featurette -->
-        <div class="featurette" id="services">
+       <!-- Second Featurette -->
+        <div class="featurette" id="toprated">
             <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
             <h2 class="featurette-heading">The Second Heading
                 <span class="text-muted">Is Pretty Cool Too.</span>
@@ -98,7 +92,7 @@
         <hr class="featurette-divider">
 
         <!-- Third Featurette -->
-        <div class="featurette" id="contact">
+        <div class="featurette" id="moviessearch">
             <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
             <h2 class="featurette-heading">The Third Heading
                 <span class="text-muted">Will Seal the Deal.</span>
@@ -107,12 +101,40 @@
         </div>
 
         <hr class="featurette-divider">
+        <!-- Cinemas Map Featurette -->
+
+        <div class="featurette" id="cinemasmap">
+            <h1 id="mapHeadline" class="featurette-heading">Search Your Cinema</h1>
+
+            <input id="pac-input" class="controls" type="text" placeholder="Cinema Search">
+
+            <fieldset id="pac-radio" data-role="controlgroup" class="controls"  placeholder="Cinema Search" data-type="horizontal">
+                <label for="google">Google Search</label>
+                <input type="radio" name="searchType" id="google" value="male" checked="true">
+                <label for="cinema">Cinema Search</label>
+                <input type="radio" name="searchType" id="cinema" value="female">
+            </fieldset>
+
+            <div id="map"></div>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuW9c5XjRG4VPXzUQ5tF0Sjv6Vdgmz1Sc&libraries=places&callback=initAutocomplete" async defer></script>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">This First Heading
+                <span class="text-muted">Will Catch Your Eye</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Berman Application Final Project</p>
                 </div>
             </div>
         </footer>
@@ -125,6 +147,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../controllers/mapController.js"></script>
 
 </body>
 

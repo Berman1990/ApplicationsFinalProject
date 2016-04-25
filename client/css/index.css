@@ -1,18 +1,24 @@
-/*!
- * Start Bootstrap - One Page Wonder HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(180, 179, 181, 0.39);
+}
 
-body {
-    margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+.br-text{
+    margin-bottom: 60px;
+}
+
+div#toprated {
+    margin-top: 50px;
 }
 
 .header-image {
     display: block;
     width: 100%;
     text-align: center;
-    background: url('http://placehold.it/1900x500') no-repeat center center scroll;
+    background: url(../assests/images/Cinema-Background.jpg);
+    /* background: url('http://www.dj-brad.com.au/wp-content/uploads/2015/12/DJ-BRAD-Background.jpg') no-repeat center center scroll;/*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -26,17 +32,20 @@ body {
 .headline h1 {
     font-size: 130px;
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    color: rgb(176, 173, 192);
+    background: rgba(0,0,0,0);
 }
 
 .headline h2 {
     font-size: 77px;
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    color: rgb(150, 152, 185);
+    background: rgba(0,0,0,0);
 }
 
 .featurette-divider {
-    margin: 80px 0;
+    margin: 30px 0;
+    border-top: 2px solid #9E9E9F;
 }
 
 .featurette {
@@ -118,6 +127,7 @@ footer {
 @media(max-width:768px) {
     .container {
         margin: 0 15px;
+        background-color: rgba(0,0,0,0);
     }
 
     .featurette-divider {
