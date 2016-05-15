@@ -4,10 +4,22 @@
  */
 
 function initAutocomplete() {
+    // Init map
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 31.970094, lng: 34.771605},
+        center: {lat: 32.1840558, lng: 34.871056},
         zoom: 13
-        //mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    // Load Cinemas
+    $.get('/api/cinemas/all', function(cinemas) {
+        for (var i = 0; i < cinemas.length; i++) {
+            var cinema = cinemas[i];
+            var marker = new google.maps.Marker({
+                position: {lat: cinema.lat, lng: cinema.lng},
+                map: map,
+                title: cinema.name
+            });
+        }
     });
 
     // Create the search box and link it to the UI element.

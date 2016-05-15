@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="../css/mapCss.css" rel="stylesheet">
+    <script src="../controllers/mapController.js"></script>
+    <script src="../services/webServices.js"></script>
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
+<h1 id="mapHeadline" class="featurette-heading">Search Your Cinema</h1>
 
+<input id="pac-input" class="controls" type="text" placeholder="Cinema Search">
+
+<fieldset id="pac-radio" data-role="controlgroup" class="controls"  placeholder="Cinema Search" data-type="horizontal">
+    <label for="google">Google Search</label>
+    <input type="radio" name="searchType" id="google" value="male" checked="true">
+    <label for="cinema">Cinema Search</label>
+    <input type="radio" name="searchType" id="cinema" value="female">
+</fieldset>
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuW9c5XjRG4VPXzUQ5tF0Sjv6Vdgmz1Sc&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 </html>

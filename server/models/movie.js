@@ -38,10 +38,10 @@ module.exports.removeById = function(id, callback){
     });
 };
 
-module.exports.add = function(compModel, callback){
-    var newComputer = new movieModel(compModel);
+module.exports.add = function(movie, callback){
+    var newMovie = new movieModel(movie);
 
-    newComputer.save(function (err, rowAffected) {
+    newMovie.save(function (err, rowAffected) {
         if(err){
             callback(err);
         }
