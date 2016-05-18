@@ -13,8 +13,23 @@ router.get('/map', function(req, res) {
 });
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.sendfile(path.resolve('../client/views/index.html'));
+router.get('/findmovie', function(req, res) {
+  res.sendfile(path.resolve('../client/views/findMovie.html'));
+});
+
+/* GET home page. */
+router.get('/toprated', function(req, res) {
+  res.sendfile(path.resolve('../client/views/topRated.html'));
+});
+
+/* GET home page. */
+router.get('/map', function(req, res) {
+  res.sendfile(path.resolve('../client/views/findMovie.html'));
+});
+
+/* GET home page. */
+router.get('/admin', function(req, res) {
+  res.sendfile(path.resolve('../client/views/admin.html'));
 });
 
 /*
