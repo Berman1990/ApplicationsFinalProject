@@ -1,4 +1,4 @@
-var app = angular.module( 'storeApp', ['ngRoute','ngMaterial', 'ChatService','computerService', 'btford.socket-io'] )
+var app = angular.module( 'moviesStoreApp', ['ngRoute','ngMaterial', 'ChatService','computerService', 'btford.socket-io'] )
     .value('nickName', 'anonymous');
 
 app.config(['$routeProvider',

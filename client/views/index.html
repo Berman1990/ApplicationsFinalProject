@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="moviesStoreApp">
 
 <head>
 
@@ -13,6 +13,12 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Angular includes -->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/angular-material.min.js"></script>
+    <script src="../js/angular-animate.min.js"></script>
 
     <!-- Custom CSS -->
     <link href="../css/index.css" rel="stylesheet">
@@ -28,29 +34,25 @@
 
 </head>
 
-<body>
+<body ng-controller="homeController">
 <!--
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCowyTffXLSPvOF-0X3fmYOX_Xf9PPHVys&callback=initMap" async defer></script>
 -->
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">World Cinema</a>
+                <a class="navbar-brand" ng-click="changeView(home)" href="#">World Cinema</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#toprated">Top Rated</a>
+                    <li ng-repeat='item in menuItems'>
+                        <div class="account-heading" ng-class="{active : activeMenu === item}">
+                            <a href="#{{item}}" ng-click="setActive(item)">{{item}}</a>
+                        </div>
                     </li>
                     <li>
                         <a href="#moviessearch">Movies Search</a>
@@ -58,8 +60,8 @@
                     <li>
                         <a href="#cinemasmap">Cinemas Map</a>
                     </li>
-                    <li>
-                        <a href="#about"></a>
+                    <li ng-class="aboutActive" ng-click="changeView(about); aboutActive='active'">
+                        <a href="#about">About us</a>
                     </li>
                 </ul>
             </div>
@@ -119,13 +121,7 @@
 
         <hr class="featurette-divider">
 
-        <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">This First Heading
-                <span class="text-muted">Will Catch Your Eye</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
+
 
         <!-- Footer -->
         <footer>
@@ -146,9 +142,7 @@
     <script src="../js/bootstrap.min.js"></script>
 
     <script src="../controllers/mapController.js"></script>
-
-
-
+    <script src="../controllers/homeController.js"></script>
 </body>
 
 </html>
