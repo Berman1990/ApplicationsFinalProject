@@ -50,9 +50,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li ng-repeat='item in menuItems'>
-                        <div class="account-heading" ng-class="{active : activeMenu === item}">
-                            <a href="#{{item}}" ng-click="setActive(item)">{{item}}</a>
-                        </div>
+                        <a href="{{item.link}}" ng-class="{active : activeMenu === item}" ng-click="setActive(item)">{{item.displayName}}</a>
                     </li>
                     <li>
                         <a href="#moviessearch">Movies Search</a>
@@ -60,7 +58,7 @@
                     <li>
                         <a href="#cinemasmap">Cinemas Map</a>
                     </li>
-                    <li ng-class="aboutActive" ng-click="changeView(about); aboutActive='active'">
+                    <li>
                         <a href="#about">About us</a>
                     </li>
                 </ul>

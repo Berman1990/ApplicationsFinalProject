@@ -36,7 +36,7 @@ app.listen(app.get('port'), function() {
 
 // application -------------------------------------------------------------
 app.get('*', function(req, res) {
-  res.sendfile('../client/views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+  res.sendFile(path.resolve('../client/views/index.html')); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 module.exports = app;

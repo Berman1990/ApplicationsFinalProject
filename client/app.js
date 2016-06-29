@@ -20,6 +20,9 @@ app.config(['$routeProvider',
             templateUrl: 'views/find.html',
             controller: 'findCtrl'
         }).
+        when('/about', {
+            templateUrl: '/about.html'
+        }).
         otherwise({
             redirectTo: '/home'
         });

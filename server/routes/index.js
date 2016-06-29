@@ -4,32 +4,32 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.sendfile(path.resolve('../client/views/index.html'));
+  res.sendFile(path.resolve('../client/views/index.html'));
 });
 
 /* GET home page. */
 router.get('/map', function(req, res) {
-  res.sendfile(path.resolve('../client/views/map.html'));
+  res.sendFile(path.resolve('../client/views/map.html'));
 });
 
 /* GET home page. */
 router.get('/findmovie', function(req, res) {
-  res.sendfile(path.resolve('../client/views/findMovie.html'));
+  res.sendFile(path.resolve('../client/views/findMovie.html'));
 });
 
 /* GET home page. */
 router.get('/toprated', function(req, res) {
-  res.sendfile(path.resolve('../client/views/topRated.html'));
+  res.sendFile(path.resolve('../client/views/topRated.html'));
 });
 
 /* GET home page. */
 router.get('/map', function(req, res) {
-  res.sendfile(path.resolve('../client/views/findMovie.html'));
+  res.sendFile(path.resolve('../client/views/findMovie.html'));
 });
 
 /* GET home page. */
 router.get('/admin', function(req, res) {
-  res.sendfile(path.resolve('../client/views/admin.html'));
+  res.sendFile(path.resolve('../client/views/admin.html'));
 });
 
 /*
