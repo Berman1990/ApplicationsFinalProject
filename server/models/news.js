@@ -7,7 +7,7 @@ var newsSchema = new mongoose.Schema({
     News : String
 });
 
-module.exports = mongoose.model('News', movieSchema);
+module.exports = mongoose.model('News', newsSchema);
 var movieModel = mongoose.model('News');
 
 module.exports.findAll = function(callback){
@@ -20,4 +20,3 @@ module.exports.findAll = function(callback){
         }
     });
 };
-
