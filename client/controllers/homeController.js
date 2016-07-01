@@ -13,4 +13,8 @@ moviesStore.controller('homeController', function($scope) {
     $scope.setActive = function(menuItem) {
         $scope.activeMenu = menuItem
     }
+
+    $scope.login = function(usere) {
+
+    }
 });
