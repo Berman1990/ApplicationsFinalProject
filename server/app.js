@@ -15,6 +15,13 @@ mongoose.connection.on('error', function() {
 
 var app = express();
 
+var homeRoute = require('./routes/home');
+//var searchRoute = require('./routes/search');
+//var mediaRoute = require('./routes/media');
+//var userRoute = require('./routes/user');
+//var statisticsRoute = require('./routes/statistics');
+
+
 app.set('port', process.env.PORT || 3000);
 
 app.use(logger('dev'));
@@ -40,3 +47,4 @@ app.get('*', function(req, res) {
 });
 
 module.exports = app;
+

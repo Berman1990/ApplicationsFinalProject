@@ -7,6 +7,10 @@ router.get('/', function(req, res) {
   res.sendFile(path.resolve('../client/views/index.html'));
 });
 
+router.get('/about', function(req, res) {
+  res.sendFile(path.resolve('../client/views/about.html'));
+});
+
 /* GET home page. */
 router.get('/map', function(req, res) {
   res.sendFile(path.resolve('../client/views/map.html'));
