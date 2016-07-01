@@ -7,9 +7,12 @@
 
 
 var pausecontent2=new Array()
-pausecontent2[0]='a href="http://www.news.com"News.com: Technology and business reports'
-pausecontent2[1]='a href="http://www.cnn.com"CNN: Headline and breaking news 24/7'
-pausecontent2[2]=' href="http://news.bbc.co.uk"BC News: UK and international news'
+pausecontent2[0]="שלום המאליכ של סדום!!!"
+pausecontent2[1]="יום בהיר חודש שבט, ירדנו אל המים, יש פירות אין פותחן, חזרנו אל הבית"
+pausecontent2[2]="רודוס, בלגאן ברודוס, רק אני ולוקוס"
+pausecontent2[3]="את מעלה תמונות שלי לאיסטגרם, החברות אומרות לך 'מאמי הוא מושלם!' , 'איך זכית בו?!'"
+pausecontent2[4]="יש לה שן אחת מתכלת ואזניים נקיות"
+pausecontent2[5]="כולם יודעים שאני ליגה מעלייך, איך זכית בי"
 
 /***********************************************
 * Pausing up-down scroller- (c) Dynamic Drive (www.dynamicdrive.com)
