@@ -3,30 +3,20 @@
  */
 var db = require('../app').db;
 
-var newsSchema = new db.Schema({
+var schema = new db.Schema({
     news : String
 });
 
-var newsModel = db.model('news', newsSchema);
+var newsModel = db.model('news', schema);
 module.exports = newsModel;
 
-module.exports.findAll = function(){
-    newsModel.find({} ,function (err, docs)
-    {
-        return docs;
-        if(err){
-        }
-        else{
-            return docs;
-        }
-    });
+module.exports.findAll = function(callback){
+    newsModel.find({}, 'news' ,callback);
 };
 
-module.exports.shapirov = function()
+module.exports.saveNews = function(strNewsText)
 {
-    var small = new newsModel({ news: 'small' });
-    console.log(small);
-    small.save(function (err) {
-        console.log(err);
+    var newNewsDoc = new newsModel({ news: strNewsText });
+    newNewsDoc.save(function (err) {
     })
 }

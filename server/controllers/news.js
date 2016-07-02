@@ -3,11 +3,13 @@
 // Push service - Send to Client!
 //
 ////////////////////////////////////////////////////////////////
+var newsIndex = 0;
+var allNews;
 module.exports.realtimePushService = function()
 {
 	var io = require('socket.io').listen(8000);
-	
-    // io errors
+
+	// io errors
     io.on('error', function (error) 
 	{
         console.log("ioError:  ");
@@ -30,16 +32,18 @@ module.exports.realtimePushService = function()
     });
 	
 	var newsModel = require('../models/news');
-	var allNews = newsModel.shapirov();
-	
-//	while (true)
-//	{
-//		for (var currNews in allNews)
-//		{
-//			setTimeout(function()
-//			{
-//				io.sockets.emit('newsNotification', JSON.parse(currNews));
-//			}, 1000);
-//		}
-//	}
+	newsModel.findAll(function (err, news)
+	{
+		allNews = news;
+		setInterval(function (news)
+		{
+			if (allNews == undefined)
+				return;
+
+			io.sockets.emit('newsNotification', allNews[newsIndex++].news);
+
+			if (newsIndex == allNews.length)
+				newsIndex = 0;
+		},5000);
+	});
 };
