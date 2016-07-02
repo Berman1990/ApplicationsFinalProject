@@ -16,39 +16,19 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
             })
         .state('about',
             {
-                // Posts list state. This state is child of posts state
                 url: '/about',
                 templateUrl: 'views/about.html',
                 controller: 'homeController'
             })
-        .state('map', {
-            // Posts info state. This state is child of posts state
+        .state('map',
+        {
             url: '/map',
             templateUrl: 'views/map.html',
         })
-        .state('authors', {
-            // Authors state. This state will contain multiple views
-            url: '/authors',
-            views: {
-                // Main template. It will be placed in the ui-view of the index.html file when /authors url is visited (relatively named)
-                '': { template: '<div class="jumbotron text-center"><h1>Authors page</h1><p>This page shows a list of popular and recent authors and it is intended to show the use of Multiple Views.</p></div><div class="row">   <!-- Popular authors named view -->   <div class="col-sm-6">     <div ui-view="popular"></div>   </div>   <!-- Recent authors named view -->   <div class="col-sm-6">      <div ui-view="recent"></div>   </div></div>' },
-
-                // popular child view. Absolutely named. It will be injected in the popular ui-view of authors state
-                'popular@authors': {
-                    template: '<ul><li ng-repeat="author in authors">{{author.name}} {{author.surname}}</li></ul>',
-                    controller: ['$scope', function($scope) {
-                        $scope.authors = [
-                            {name: 'John', surname: 'Benneth'},
-                            {name: 'Anthony', surname: 'Horner'},
-                            {name: 'James', surname: 'Blanch'},
-                            {name: 'Harrison', surname: 'Williams'},
-                        ];
-                    }]
-                },
-
-                // recent child view. Absolutely named. It will be injected in the recent ui-view of authors state
-                'recent@authors': { template: 'No recent authors since last month' }
-            }
+        .state('login',
+        {
+            url: '/login',
+            templateUrl: 'views/login.html',
         });
 
 });
