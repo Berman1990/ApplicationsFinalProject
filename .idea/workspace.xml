@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="091316a9-fb46-4bd0-b934-1cb3f3354330" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/views/Login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/views/Register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app.js" afterPath="$PROJECT_DIR$/client/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/index.css" afterPath="$PROJECT_DIR$/client/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/Login.html" afterPath="$PROJECT_DIR$/client/views/Login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/Register.html" afterPath="$PROJECT_DIR$/client/views/Register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/index.html" afterPath="$PROJECT_DIR$/client/views/index.html" />
     </list>
     <ignored path="ApplicationFinalProject.iws" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="858">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -51,8 +51,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+            <state relative-caret-position="462">
+              <caret line="70" column="47" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -61,8 +61,8 @@
       <file leaf-file-name="Login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/Login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+            <state relative-caret-position="330">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -71,8 +71,8 @@
       <file leaf-file-name="Register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/Register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="99">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -81,8 +81,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="203" column="28" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="28" />
+            <state relative-caret-position="457">
+              <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,8 +91,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="344">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -169,10 +169,10 @@
         <option value="$PROJECT_DIR$/client/controllers/homeController.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/client/views/home.html" />
-        <option value="$PROJECT_DIR$/client/views/Register.html" />
+        <option value="$PROJECT_DIR$/client/views/Login.html" />
         <option value="$PROJECT_DIR$/client/app.js" />
         <option value="$PROJECT_DIR$/client/views/index.html" />
-        <option value="$PROJECT_DIR$/client/views/Login.html" />
+        <option value="$PROJECT_DIR$/client/views/Register.html" />
         <option value="$PROJECT_DIR$/client/css/index.css" />
       </list>
     </option>
@@ -432,7 +432,7 @@
       <workItem from="1467383867326" duration="38000" />
       <workItem from="1467384643805" duration="761000" />
       <workItem from="1467448453515" duration="797000" />
-      <workItem from="1467454154640" duration="6900000" />
+      <workItem from="1467454154640" duration="8210000" />
     </task>
     <task id="LOCAL-00001" summary="Add and change some stuff in the main for angular shit">
       <created>1466975794710</created>
@@ -462,11 +462,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467458366653</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fix client routing and add forms">
+      <created>1467464885916</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467464885916</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43657000" />
+    <option name="totallyTimeSpent" value="44967000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,7 +526,8 @@
     <MESSAGE value="Fix for the express sendFile" />
     <MESSAGE value="More routing shit" />
     <MESSAGE value="Fix client routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix client routing" />
+    <MESSAGE value="Fix client routing and add forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix client routing and add forms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,14 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/controllers/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/map.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
@@ -815,50 +815,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/home.html">
+    <entry file="file://$PROJECT_DIR$/client/controllers/homeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="33">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/Register.html">
+    <entry file="file://$PROJECT_DIR$/client/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="344">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+        <state relative-caret-position="858">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/views/Login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+        <state relative-caret-position="330">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="70" column="47" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/Register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="203" column="28" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="28" />
+        <state relative-caret-position="457">
+          <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
           <folding />
         </state>
       </provider>

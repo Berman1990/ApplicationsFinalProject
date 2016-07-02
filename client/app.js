@@ -21,16 +21,20 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
                 controller: 'homeController'
             })
         .state('map',
-        {
-            url: '/map',
-            templateUrl: 'views/map.html',
-        })
+            {
+                url: '/map',
+                templateUrl: 'views/map.html',
+            })
         .state('login',
-        {
-            url: '/login',
-            templateUrl: 'views/login.html',
-        });
-
+            {
+                url: '/login',
+                templateUrl: 'views/login.html',
+            })
+        .state('register',
+            {
+                url: '/register',
+                templateUrl: 'views/register.html',
+            });
 });
 
 
