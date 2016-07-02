@@ -29,20 +29,25 @@ var movieModel = db.model('movies', schema);
 module.exports = movieModel;
 
 module.exports.removeById = function(id, callback){
-    movieModel.findByIdAndRemove(id, function (err, doc) {
-        if(err){
-            callback(err);
-        }
-        else{
-            callback(null);
-        }
-    });
+    movieModel.findByIdAndRemove(id, callback);
 };
 
+module.exports.add = function(movie) {
+    movie.save(function (err) {})
+};
 
+module.exports.findAll = function(callback){
+    movieModel.find({}, callback);
+};
 
-module.exports.add = function(movie)
-{
-    movie.save(function (err) {
-    })
+module.exports.findByDirector = function(Director, callback){
+    movieModel.find({'Director' : Director}, callback);
+};
+
+module.exports.findByYear = function(Year, callback){
+    movieModel.find({'Year' : Year}, callback);
+};
+
+module.exports.findByGenre = function(Genre, callback){
+    movieModel.find({'Genre' : Genre}, callback);
 };
