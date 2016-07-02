@@ -1,10 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<div>
+    <div class="row">
+        <div class="col-md-10">
+            <video id="homevideo" width="80%" autoplay controls onended="run()">
+                <source src="http://movietrailers.apple.com/movies/disney/insideout/insideout-usca-tlr2_h720p.mov" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <form class="navbar-form navbar-left row" role="search">
+            <button class="btn-link" ng-click="openAdvanceSearchInstruction()" >חיפוש מתקדם</button>
+            <div class="form-group">
+                <input type="text" ng-model="searchQuery" class="form-control" style="padding-top: 10px; margin-top: 1px; border-radius: 1px" placeholder="חיפוש" name="searchString">
+            </div>
+            <button ui-sref="searchResult({searchQuery: searchQuery })" class="btn btn-info glyphicon glyphicon-search" style="border-radius: 1px"></button>
+        </form>
+    </div>
+    <div class="site-content" ng-init="getAllMedia()">
+        <div class="row" style="height: 100%">
+            <div class="col-md-6 content-column">
+                <div class="row">
+                    <div class="col-md-9 home-header">
+                        הסרטים החדשים ביותר
+                    </div>
+                </div>
+                <div ng-repeat="media in allMedia">
+                    <div class="row content-row" ng-if="media.mediaType === '1'">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-4">{{media.releaseDate.toLocaleDateString()}}</div>
+                                <div class="col-md-8"><a ui-sref="mediaDetails({mediaId: '{{media._id}}' })">{{media.hebrewTitle}}</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="padding: 0;">
+                            <img style="width: 100%; height: 130px" ng-src="{{media.image}}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 content-column">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-9 home-header">
+                            הסדרות החדשות ביותר
+                        </div>
+                    </div>
+                    <div  ng-repeat="media in allMedia">
+                        <div class="row content-row" ng-if="media.mediaType === '2'">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">{{media.releaseDate.toLocaleDateString()}}</div>
+                                    <div class="col-md-8"><a ui-sref="mediaDetails({mediaId: '{{media._id}}' })">{{media.hebrewTitle}}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <img style="width: 100%; height: 130px" ng-src="{{media.image}}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        var videos = ['http://movietrailers.apple.com/movies/disney/insideout/insideout-usca-tlr2_h720p.mov',
+            'http://movietrailers.apple.com/movies/lionsgate/thehungergamesmockingjaypart2/mockingjaypt2-tlr4_h720p.mov',
+            'http://movietrailers.apple.com/movies/independent/uponthewooftop/uponthewooftop-tlr1_h720p.mov',
+            'http://movietrailers.apple.com/movies/entertainmentone/lostinthesun/lostinthesun-tlr1_h720p.mov'];
+        var video_count = 1;
+        var videoPlayer = document.getElementById("homevideo");
+
+        function run() {
+            video_count++;
+            if (video_count === 3) video_count = 1;
+            videoPlayer.src = videos[video_count];
+            videoPlayer.play();
+        }
+
+    </script>
+</div>
