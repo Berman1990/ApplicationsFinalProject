@@ -23,8 +23,10 @@ window.onbeforeunload = function ()
 
 moviesStoreApp.run(function () 
 {
-    socket.on('notification', function (news) 
+    socket.on('newsNotification', function (news) 
 	{
+		pausecontent2.shift(); 
+		pausecontent2.push("<b>" + new Date().toLocaleTimeString() + "   -   " + news + "</b>");
 		console.log(news);
     });
 });

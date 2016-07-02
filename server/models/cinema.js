@@ -1,9 +1,9 @@
 /**
  * Created by idan on 23/03/2016.
  */
-var mongoose = require('mongoose');
+var db = require('../app').db;
 
-var cinemaSchema = new mongoose.Schema({
+var schema = new db.Schema({
     id: { type: Number, unique: true },
     name: String,
     address: String,
@@ -12,6 +12,11 @@ var cinemaSchema = new mongoose.Schema({
     openingHourse: String
 });
 
-var Cinema = mongoose.model('Cinema', cinemaSchema);
+var cinemaModel = db.model('cinemas', schema);
+module.exports = cinemaModel;
 
-module.exports = mongoose.model('Cinema', cinemaSchema);
+module.exports.add = function(cinema)
+{
+    cinema.save(function (err) {
+    })
+};

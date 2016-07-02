@@ -45,6 +45,6 @@ module.exports.realtimePushService = function()
 
 			if (newsIndex == allNews.length)
 				newsIndex = 0;
-		},1000);
+		},5000);
 	});
 };
