@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-10">
             <video id="homevideo" width="80%" autoplay controls onended="run()">
-                <source src="http://movietrailers.apple.com/movies/disney/insideout/insideout-usca-tlr2_h720p.mov" type="video/mp4">
+
             </video>
         </div>
     </div>
@@ -62,21 +62,4 @@
             </div>
         </div>
     </div>
-
-    <script language="javascript" type="text/javascript">
-        var videos = ['http://movietrailers.apple.com/movies/disney/insideout/insideout-usca-tlr2_h720p.mov',
-            'http://movietrailers.apple.com/movies/lionsgate/thehungergamesmockingjaypart2/mockingjaypt2-tlr4_h720p.mov',
-            'http://movietrailers.apple.com/movies/independent/uponthewooftop/uponthewooftop-tlr1_h720p.mov',
-            'http://movietrailers.apple.com/movies/entertainmentone/lostinthesun/lostinthesun-tlr1_h720p.mov'];
-        var video_count = 1;
-        var videoPlayer = document.getElementById("homevideo");
-
-        function run() {
-            video_count++;
-            if (video_count === 3) video_count = 1;
-            videoPlayer.src = videos[video_count];
-            videoPlayer.play();
-        }
-
-    </script>
 </div>

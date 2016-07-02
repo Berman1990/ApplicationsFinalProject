@@ -11,18 +11,20 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
         .state('home',
             {
                 url: '/',
-                templateUrl: '../views/home.html'
+                templateUrl: 'views/home.html',
+                controller: 'homeController'
             })
         .state('about',
             {
                 // Posts list state. This state is child of posts state
                 url: '/about',
-                templateUrl: '../views/about.html',
+                templateUrl: 'views/about.html',
+                controller: 'homeController'
             })
-        .state('posts.info', {
+        .state('map', {
             // Posts info state. This state is child of posts state
-            url: '/info',
-            template: 'Posts information. We are using directly a string template instead of a url linking to a template.'
+            url: '/map',
+            templateUrl: 'views/map.html',
         })
         .state('authors', {
             // Authors state. This state will contain multiple views

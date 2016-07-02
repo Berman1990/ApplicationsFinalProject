@@ -58,7 +58,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="about">World Cinema</a>
+                <a class="navbar-brand" ui-sref="home">World Cinema</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,28 +67,21 @@
                         <a ui-sref="home">{{item.displayName}}</a>
                     </li>
                     <li>
-                        <a href="#moviessearch">Movies Search</a>
+                        <a>Movies Search</a>
                     </li>
                     <li>
-                        <a href="#cinemasmap">Cinemas Map</a>
+                        <a ui-sref="map">Cinemas Map</a>
                     </li>
                     <li>
-                        <a href="#about">About us</a>
+                        <a ui-sref="about">About us</a>
                     </li>
                 </ul>
 					
             </div>
-
-			<script type="text/javascript">
-			new pausescroller(pausecontent2, "pscroller2", "someclass", 5000)
-			</script>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-
-
 
     <!-- Full Width Image Header -->
     <header class="header-image">
@@ -99,12 +92,10 @@
             </div>
         </div>
     </header>
+
     <div class="container body-content site-container">
         <div ui-view></div>
     </div>
-
-
-
 
     <!-- Footer -->
         <footer>
@@ -116,10 +107,6 @@
         </footer>
 
     </div>
-    <!-- /.container -->
-
-
-
 
 
 </body>
