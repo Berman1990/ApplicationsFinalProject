@@ -32,14 +32,14 @@ module.exports.realtimePushService = function()
 	var newsModel = require('../models/news');
 	var allNews = newsModel.shapirov();
 	
-	while (true)
-	{
-		for (var currNews in allNews)
-		{
-			setTimeout(function() 
-			{
-				io.sockets.emit('newsNotification', JSON.parse(currNews));
-			}, 1000);
-		}
-	}
+//	while (true)
+//	{
+//		for (var currNews in allNews)
+//		{
+//			setTimeout(function()
+//			{
+//				io.sockets.emit('newsNotification', JSON.parse(currNews));
+//			}, 1000);
+//		}
+//	}
 };
