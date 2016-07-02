@@ -11,11 +11,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/all', function(req, res) {
-    res.send(controller.findAll());
+    controller.findAll(function(ret){
+        res.send(ret)});
 });
 
-router.get('/byId:id', function(req, res) {
-        res.send(controller.findById(req.param('id')));
+router.get('/byId/:id', function(req, res) {
+    controller.findById(req.params.id, function(ret){
+        res.send(ret)});
 });
 
 module.exports = router;

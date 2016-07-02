@@ -6,24 +6,24 @@ module.exports.add = function(cinema) {
     cinema.save(function (err) {})
 };
 
-module.exports.findAll = function(){
+module.exports.findAll = function(callback){
     cinemaModel.findAll(function (err, cinemas) {
         if (err) {
-            return "server error";
+            callback("server error");
         }
         else {
-            return cinemas;
+            callback(cinemas);
         }
     });
 };
 
-module.exports.findById = function(id){
+module.exports.findById = function(id, callback){
     cinemaModel.findById(id, function (err, cinemas) {
         if (err) {
-            return "server error";
+            callback("server error");
         }
         else {
-            return cinemas;
+            callback(cinemas);
         }
     });
 };
