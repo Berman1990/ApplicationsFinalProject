@@ -7,12 +7,12 @@
 
 
 var pausecontent2=new Array()
-pausecontent2[0]="שלום המאליכ של סדום!!!"
-pausecontent2[1]="יום בהיר חודש שבט, ירדנו אל המים, יש פירות אין פותחן, חזרנו אל הבית"
-pausecontent2[2]="רודוס, בלגאן ברודוס, רק אני ולוקוס"
-pausecontent2[3]="את מעלה תמונות שלי לאיסטגרם, החברות אומרות לך 'מאמי הוא מושלם!' , 'איך זכית בו?!'"
-pausecontent2[4]="יש לה שן אחת מתכלת ואזניים נקיות"
-pausecontent2[5]="כולם יודעים שאני ליגה מעלייך, איך זכית בי"
+pausecontent2[0]="1"
+pausecontent2[1]="2"
+pausecontent2[2]="3"
+pausecontent2[3]="4"
+pausecontent2[4]="5"
+
 
 /***********************************************
 * Pausing up-down scroller- (c) Dynamic Drive (www.dynamicdrive.com)
