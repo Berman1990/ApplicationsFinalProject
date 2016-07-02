@@ -15,8 +15,14 @@ var schema = new db.Schema({
 var cinemaModel = db.model('cinemas', schema);
 module.exports = cinemaModel;
 
-module.exports.add = function(cinema)
-{
-    cinema.save(function (err) {
-    })
+module.exports.add = function(cinema) {
+    cinema.save(function (err) {})
+};
+
+module.exports.findAll = function(callback){
+    cinemaModel.find({}, callback);
+};
+
+module.exports.findById = function(id, callback){
+    cinemaModel.find({'id' : id}, callback);
 };

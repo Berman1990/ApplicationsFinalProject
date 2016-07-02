@@ -7,11 +7,11 @@
 
 
 var pausecontent2=new Array()
-pausecontent2[0]="1"
-pausecontent2[1]="2"
-pausecontent2[2]="3"
-pausecontent2[3]="4"
-pausecontent2[4]="5"
+pausecontent2[0]=""
+pausecontent2[1]=""
+pausecontent2[2]=""
+pausecontent2[3]=""
+pausecontent2[4]=""
 
 
 /***********************************************

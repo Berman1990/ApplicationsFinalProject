@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var Cinema = require('../models/cinema');
+var controller = require('../controllers/cinema');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,27 +11,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/all', function(req, res) {
-    Cinema.find({},function(err, Cinemas) {
-        res.send(Cinemas);
-    });
+    res.send(controller.findAll());
 });
 
 router.get('/byId:id', function(req, res) {
-    Cinema.find({'id' : req.param('id')},function(err, movies) {
-        res.send(movies);
-    });
+        res.send(controller.findById(req.param('id')));
 });
-
-router.get('/byId:id', function(req, res) {
-    Cinema.find({'id' : req.param('id')},function(err, movies) {
-        res.send(movies);
-    });
-});
-
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
-});
-
-
 
 module.exports = router;
