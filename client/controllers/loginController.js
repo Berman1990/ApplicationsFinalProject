@@ -19,38 +19,24 @@ moviesStoreApp
         if($scope.loginDetails.userName === "" || $scope.loginDetails.userName === undefined ||
             $scope.loginDetails.password === "" || $scope.loginDetails.password === undefined)
         {
-            $scope.error = "נא למלא את כל השדות";
+            $scope.error = "Not all fields were filled";
             return false;
         }
         return true;
     };
     var validateFields = function(){
         if($scope.user.userName === "" || $scope.user.userName === undefined ||
-            $scope.user.firstName === "" || $scope.user.firstName === undefined ||
-            $scope.user.lastName === "" ||  $scope.user.lastName === undefined ||
             $scope.user.email === "" || $scope.user.email === undefined ||
             $scope.user.password === "" || $scope.user.password === undefined)
         {
-            $scope.error = "נא למלא את כל השדות";
+            $scope.error = "Not all fields were filled";
+            return false;
+        }
+        else if($scope.user.password != $scope.user.scndPassword){
+            $scope.error = "Passwords dont match";
             return false;
         }
         return true;
-    };
-
-    $scope.deleteUser = function(){
-        var query = $resource('/deleteUser/:id', {id:$scope.user._id},
-            {
-                deleteUser:
-                {
-                    method: 'DELETE'
-                }
-            });
-        query.deleteUser(function(){
-            loginService.setLoggedUSer(null);
-            $state.go('home')
-        },function(){
-
-        });
     };
 
     $scope.login = function (){
@@ -68,7 +54,7 @@ moviesStoreApp
                         $state.go('home');
                     }
                     else {
-                        $scope.error = "שם משתמש או סיסמא שגויים, נסה שנית";
+                        $scope.error = "Username or password were wrong";
                         $scope.$apply();
                     }
                 }
@@ -87,7 +73,7 @@ moviesStoreApp
                 success: function(result) {
                     if(result.error != null || result.error != undefined)
                     {
-                        $scope.error = "שם משתמש כבר קיים";
+                        $scope.error = "Username taken";
                         $scope.$apply();
                     }else {
                         loginService.setLoggedUSer(result);
@@ -105,30 +91,6 @@ moviesStoreApp
     {
         $scope.userDetails = {};
     }
-
-    $scope.updateUserDetails = function(){
-        if(validateFields())
-        {
-            $.ajax({
-                method   : 'POST',
-                url      : '/updateUser',
-                data     : $scope.userDetails,
-                dataType : 'json',
-                success: function(result) {
-                    if(result.error != null || result.error != undefined)
-                    {
-                        $scope.error = "שם משתמש כבר קיים";
-                        $scope.$apply();
-                    }
-                    else {
-                        loginService.setLoggedUSer(result);
-                        $state.go('home');
-                    }
-                }
-            });
-
-        }
-    };
 }]);
 
 moviesStoreApp.service('loginService',['$cookies', '$state', function($cookies,$state) {

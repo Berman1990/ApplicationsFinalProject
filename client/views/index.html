@@ -42,11 +42,12 @@
     <script src="../controllers/homeController.js"></script>
     <script src="../controllers/mapController.js"></script>
     <script src="../controllers/loginController.js"></script>
+    <script src="../controllers/adminController.js"></script>
     <script src="../app.js"></script>
 
     <base href="/">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="../js/ticker.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../js/ticker.js"></script>
 </head>
 
 <body ng-app="moviesStoreApp">
@@ -54,62 +55,70 @@
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCowyTffXLSPvOF-0X3fmYOX_Xf9PPHVys&callback=initMap" async defer></script>
 -->
-    <div class="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" ui-sref="home">World Cinema</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li ng-class="{active : activeMenu === item}" ng-click="setActive(item)">
-                            <a>Movies Search</a>
-                        </li>
-                        <li ng-class="{active : activeMenu === item}" ng-click="setActive(item)">
-                            <a ui-sref="map">Cinemas Map</a>
-                        </li>
-                        <li ng-class="{active : activeMenu === item}" ng-click="setActive(item)">
-                            <a ui-sref="about">About us</a>
-                        </li>
-                        <li ng-class="{active : activeMenu === item}" ng-click="setActive(item)">
-                            <a ui-sref="login">Login</a>
-                        </li>
-                        <li ng-class="{active : activeMenu === item}" ng-click="setActive(item)">
-                            <a ui-sref="register">Register</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- /.navbar-collapse -->
+<div class="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="homeController">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="home">World Cinema</a>
             </div>
-            <!-- /.container -->
-        </nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                        <a>Movies Search</a>
+                    </li>
+                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                        <a ui-sref="map">Cinemas Map</a>
+                    </li>
+                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                        <a ui-sref="about">About us</a>
+                    </li>
+                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                        <a ui-sref="login">Login</a>
+                    </li>
+                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                        <a ui-sref="register">Register</a>
+                    </li>
+                    <li class="dropdown" ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                        <a class="dropbtn">Admin</a>
+                        <div class="dropdown-content">
+                            <a ui-sref="editCinemas">Edit Cinemas</a>
+                            <a ui-sref="createCinemas">Create Cinemas</a>
+                            <a ui-sref="deleteCinemas">Delete Cinemas</a>
+                        </div>
+                    </li>
+                </ul>
 
-        <!-- Full Width Image Header -->
-        <header class="header-image">
-            <div class="headline">
-                <div class="container">
-                    <h1>World Cinema</h1>
-                </div>
             </div>
-        </header>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-        <div class="container body-content site-container">
-            <div ui-view></div>
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>World Cinema</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container body-content site-container">
+        <div ui-view></div>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Berman Application Final Project</p>
         </div>
     </div>
-    <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Berman Application Final Project</p>
-                </div>
-            </div>
-        </footer>
+</footer>
 
-    </div>
+</div>
 </body>
 </html>

@@ -36,6 +36,24 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
                 url: '/register',
                 templateUrl: 'views/register.html',
                 controller: 'loginController'
+            })
+        .state('editCinemas',
+            {
+                url: '/editCinemas',
+                templateUrl: 'views/editCinemas.html',
+                controller: 'adminController'
+            })
+        .state('createCinemas',
+            {
+                url: '/createCinemas',
+                templateUrl: 'views/createCinemas.html',
+                controller: 'adminController'
+            })
+        .state('deleteCinemas',
+            {
+                url: '/deleteCinemas',
+                templateUrl: 'views/deleteCinemas.html',
+                controller: 'adminController'
             });
 });
 
