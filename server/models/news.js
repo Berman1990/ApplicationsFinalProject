@@ -1,22 +1,32 @@
 /**
  * Created by idan on 23/03/2016.
  */
-var mongoose = require('mongoose');
+var db = require('../app').db;
 
-var newsSchema = new mongoose.Schema({
-    News : String
+var newsSchema = new db.Schema({
+    news : String
 });
 
-module.exports = mongoose.model('News', newsSchema);
-var movieModel = mongoose.model('News');
+var newsModel = db.model('news', newsSchema);
+module.exports = newsModel;
 
-module.exports.findAll = function(callback){
-    movieModel.find({}, {'News' : 1}, function (err, doc) {
+module.exports.findAll = function(){
+    newsModel.find({} ,function (err, docs)
+    {
+        return docs;
         if(err){
-            callback(err);
         }
         else{
-            callback(null);
+            return docs;
         }
     });
 };
+
+module.exports.shapirov = function()
+{
+    var small = new newsModel({ news: 'small' });
+    console.log(small);
+    small.save(function (err) {
+        console.log(err);
+    })
+}

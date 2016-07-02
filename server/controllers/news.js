@@ -1,15 +1,12 @@
-var newsMosel = require('..\models\news');
-var io = require('socket.io').listen(8000);
-
-var allNews;
-
 ////////////////////////////////////////////////////////////////
 //
 // Push service - Send to Client!
 //
 ////////////////////////////////////////////////////////////////
-var realtimePushService = function () 
+module.exports.realtimePushService = function()
 {
+	var io = require('socket.io').listen(8000);
+	
     // io errors
     io.on('error', function (error) 
 	{
@@ -32,11 +29,12 @@ var realtimePushService = function ()
         });
     });
 	
-	allNews = newsMosel.findAll.
+	var newsModel = require('../models/news');
+	var allNews = newsModel.shapirov();
 	
 	while (true)
 	{
-		for (var currNews : allNews)
+		for (var currNews in allNews)
 		{
 			setTimeout(function() 
 			{
