@@ -23,17 +23,19 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
         .state('map',
             {
                 url: '/map',
-                templateUrl: 'views/map.html',
+                templateUrl: 'views/map.html'
             })
         .state('login',
             {
                 url: '/login',
                 templateUrl: 'views/login.html',
+                controller: 'loginController'
             })
         .state('register',
             {
                 url: '/register',
                 templateUrl: 'views/register.html',
+                controller: 'loginController'
             });
 });
 
