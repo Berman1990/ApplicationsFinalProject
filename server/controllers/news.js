@@ -40,7 +40,7 @@ module.exports.realtimePushService = function()
 			if (allNews == undefined)
 				return;
 
-			console.log(allNews[newsIndex++].news);
+			console.log(allNews[newsIndex].news);
 			io.sockets.emit('newsNotification', allNews[newsIndex++].news);
 
 			if (newsIndex == allNews.length)
