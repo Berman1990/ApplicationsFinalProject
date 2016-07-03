@@ -67,8 +67,8 @@ moviesStoreApp
         {
             $.ajax({
                 method   : 'POST',
-                url      : '/register',
-                data     : $scope.user,
+                url      : '/users/add',
+                data     : JSON.stringify($scope.user),
                 dataType : 'json',
                 success: function(result) {
                     if(result.error != null || result.error != undefined)
@@ -110,7 +110,7 @@ moviesStoreApp.service('loginService',['$cookies', '$state', function($cookies,$
         return {
             setLoggedUSer: setLoggedUSer,
             getLoggedUser: getLoggedUser,
-            logout: logout,
+            logout: logout
         };
     }]
 );
