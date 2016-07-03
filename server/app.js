@@ -8,55 +8,45 @@ var appDB = require('mongoose');
 var config = require('./config');
 var app = undefined;
 
-function startServer()
-{
-	if (app != undefined)
-		return;
-	
-	appDB.connect(config.MONGO_URI);
-	appDB.connection.on('error', function() {
-	  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
-	});
 
-	var app = express();
+appDB.connect(config.MONGO_URI);
+appDB.connection.on('error', function() {
+  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+});
+module.exports.db = appDB;
 
-	var homeRoute = require('./routes/home');
-	//var searchRoute = require('./routes/search');
-	//var mediaRoute = require('./routes/media');
-	//var userRoute = require('./routes/user');
-	//var statisticsRoute = require('./routes/statistics');
+var app = express();
+//var homeRoute = require('./routes/home');
+//var searchRoute = require('./routes/search');
+//var mediaRoute = require('./routes/media');
+//var userRoute = require('./routes/user');
+//var statisticsRoute = require('./routes/statistics');
 
+app.set('port', process.env.PORT || 3000);
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-	app.set('port', process.env.PORT || 3000);
+// serve the static client files
+app.use(express.static(path.join(__dirname, '../client')));
+app.use(cookieParser());
 
-	app.use(logger('dev'));
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({ extended: true }));
-	app.use(express.static(path.join(__dirname, 'public')));
+// set up the routes
+require('./routes')(app);
 
-	// serve the static client files
-	app.use(express.static(path.join(__dirname, '../client')));
-	app.use(cookieParser());
+// start the server
+app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + app.get('port'));
+});
 
-	// set up the routes
-	require('./routes')(app);
+// application -------------------------------------------------------------
+app.get('*', function(req, res) {
+  res.sendFile(path.resolve('../client/views/index.html')); // load the single view file (angular will handle the page changes on the front-end)
+});
 
-	// start the server
-	app.listen(app.get('port'), function() {
-	  console.log('Express server listening on port ' + app.get('port'));
-	});
+module.exports.app = app;
 
-	// application -------------------------------------------------------------
-	app.get('*', function(req, res) {
-	  res.sendFile(path.resolve('../client/views/index.html')); // load the single view file (angular will handle the page changes on the front-end)
-	});
-
-	module.exports.app = app;
-	module.exports.db = appDB;
-
-  // News
-  var newsModel = require('./controllers/news');
-  newsModel.realtimePushService();
-}
-
-startServer();
+// News
+ var newsModel = require('./controllers/news');
+ newsModel.realtimePushService();

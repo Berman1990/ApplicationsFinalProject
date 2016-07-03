@@ -2,8 +2,9 @@
  * Created by idan on 23/03/2016.
  */
 var mongoose = require('mongoose');
+var db = require('../app').db;
 
-var movieSchema = new mongoose.Schema({
+var schema = new db.Schema({
     Title : String,
     Year : Number,
     Rated : String,
@@ -24,30 +25,29 @@ var movieSchema = new mongoose.Schema({
     imdbID : {type:String, unique: true}
 });
 
-module.exports = mongoose.model('Movie', movieSchema);
-var movieModel = mongoose.model('Movie');
+var movieModel = db.model('movies', schema);
+module.exports = movieModel;
 
 module.exports.removeById = function(id, callback){
-    movieModel.findByIdAndRemove(id, function (err, doc) {
-        if(err){
-            callback(err);
-        }
-        else{
-            callback(null);
-        }
-    });
+    movieModel.findByIdAndRemove(id, callback);
 };
 
-module.exports.add = function(movie, callback){
-    var newMovie = new movieModel(movie);
-
-    newMovie.save(function (err, rowAffected) {
-        if(err){
-            callback(err);
-        }
-        else{
-            callback(null);
-        }
-    });
+module.exports.add = function(movie) {
+    movie.save(function (err) {})
 };
 
+module.exports.findAll = function(callback){
+    movieModel.find({}, callback);
+};
+
+module.exports.findByDirector = function(Director, callback){
+    movieModel.find({'Director' : Director}, callback);
+};
+
+module.exports.findByYear = function(Year, callback){
+    movieModel.find({'Year' : Year}, callback);
+};
+
+module.exports.findByGenre = function(Genre, callback){
+    movieModel.find({'Genre' : Genre}, callback);
+};

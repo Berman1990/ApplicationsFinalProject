@@ -14,9 +14,9 @@ module.exports.findAll = function(callback){
     newsModel.find({}, 'news' ,callback);
 };
 
-module.exports.saveNews = function(strNewsText)
+module.exports.add = function(strNewsText)
 {
     var newNewsDoc = new newsModel({ news: strNewsText });
     newNewsDoc.save(function (err) {
     })
-}
+};
