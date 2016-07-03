@@ -11,8 +11,6 @@
 
     <title>One Page Wonder - Start Bootstrap Template</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Angular includes -->
     <script src="../js/jquery-2.1.4.min.js"></script>
@@ -27,6 +25,8 @@
 
 
     <!-- Custom CSS -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/ticker.css" rel="stylesheet">
     <link href="../css/index.css" rel="stylesheet">
     <link href="../css/mapCss.css" rel="stylesheet">
     <link href="../css/topRatedCss.css" rel="stylesheet">
@@ -38,6 +38,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<script src="../js/socket.io.js"></script>
     <script src="../js/index.js"></script>
     <script src="../controllers/homeController.js"></script>
     <script src="../controllers/mapController.js"></script>
@@ -90,7 +91,9 @@
                         </div>
                     </li>
                 </ul>
-
+				<script type="text/javascript">
+					new pausescroller(pausecontent2, "pscroller2", "someclass", 5000)
+				</script>
             </div>
             <!-- /.navbar-collapse -->
         </div>
