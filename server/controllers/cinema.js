@@ -28,3 +28,14 @@ module.exports.findById = function(id, callback){
         }
     });
 };
+
+module.exports.deleteById = function(id, callback){
+    cinemaModel.deleteById(id, function (err, cinemas) {
+        if (err) {
+            callback("server error");
+        }
+        else {
+            callback(cinemas);
+        }
+    });
+};

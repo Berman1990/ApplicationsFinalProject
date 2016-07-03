@@ -26,3 +26,8 @@ module.exports.findAll = function(callback){
 module.exports.findById = function(id, callback){
     cinemaModel.find({'id' : id}, callback);
 };
+
+module.exports.deleteById = function(id, callback){
+    cinemaModel.find({'id' : id}).remove(callback);
+};
+
