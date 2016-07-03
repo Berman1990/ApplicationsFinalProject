@@ -20,4 +20,10 @@ router.get('/byId/:id', function(req, res) {
         res.send(ret)});
 });
 
+router.post('/add', function(req, res) {
+    controller.add(req.body, function(ret){
+        res.send(ret)});
+});
+
+
 module.exports = router;

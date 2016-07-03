@@ -16,7 +16,7 @@ router.get('/all', function(req, res) {
         res.send(ret)});
 });
 
-router.get('/removeById/:id', function(req, res) {
+router.post('/removeById/:id', function(req, res) {
     controller.removeById(req.params.id, function(ret){
         res.send(ret)});
 });

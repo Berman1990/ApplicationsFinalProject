@@ -2,11 +2,15 @@
  * Created by idan on 24/04/2016.
  */
 moviesStoreApp.controller('adminController', function($scope) {
+
+    $scope.allCinemas;
+
+
     $scope.createCinema = function(){
         if(validateFields()) {
             $.ajax({
                 method: 'POST',
-                url: '/createCinemas',
+                url: '/cinemas/add',
                 data: $scope.newCinema,
                 dataType: 'json',
                 success: function () {
@@ -41,13 +45,20 @@ moviesStoreApp.controller('adminController', function($scope) {
     };
 
     $scope.getAllCinemas = function(){
-
+        $.ajax({
+            method: 'GET',
+            url: '/cinemas/all',
+            dataType: 'json',
+            success: function (result) {
+                $scope.allCinemas = result;
+            }
+        });
     }
 
     var validateFields = function(){
-        if($scope.newCinema.cinemaName === "" || $scope.newCinema.cinemaName === undefined ||
-            $scope.newCinema.cinemaAddress === "" || $scope.newCinema.cinemaAddress === undefined ||
-            $scope.newCinema.cinemaOpeningHours === "" || $scope.newCinema.cinemaOpeningHours === undefined)
+        if($scope.newCinema.name === "" || $scope.newCinema.name === undefined ||
+            $scope.newCinema.address === "" || $scope.newCinema.address === undefined ||
+            $scope.newCinema.openingHourse === "" || $scope.newCinema.openingHourse === undefined)
         {
             $scope.error = "Not all fields were filled";
             return false;
