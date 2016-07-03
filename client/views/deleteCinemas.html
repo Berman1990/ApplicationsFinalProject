@@ -1,7 +1,10 @@
-<div class="createCinemas" style="padding-top: 30px;">
+<div class="createCinemas" style="padding-top: 30px;" ng-init="getAllCinemas()">
     <form method="post">
-        <input type="text" name="cinemaName" placeholder="Cinema Name" required="required" ng-model="cinemaToDelete.cinemaName" /> </br>
-        <input type="text" name="cinemaAddress" placeholder="Cinema Address" required="required" ng-model="cinemaToDelete.cinemaAddress"/> </br>
+        <select id="cinemas" ng-model="deletedCinema" ng-options="item as item.name for item in allCinemas">
+            <option value="">Select Cinema</option>
+        </select> </br>
+        <input type="text" name="cinemaName" placeholder="Cinema Name" required="required" ng-model="deletedCinema.name" disabled/> </br>
+        <input type="text" name="cinemaAddress" placeholder="Cinema Address" required="required" ng-model="deletedCinema.address" disabled/> </br>
         <button type="submit" class="btn btn-primary btn-block btn-large" ng-click="deleteCinema()">Delete cinema</button>
     </form>
 </div>
