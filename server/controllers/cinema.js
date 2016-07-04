@@ -3,8 +3,7 @@ var cinemaModel = require('../models/cinema');
 
 
 module.exports.add = function(cinema) {
-    cinema.save(
-        function (err) {})
+    cinemaModel.add(cinema);
 };
 
 module.exports.findAll = function(callback){

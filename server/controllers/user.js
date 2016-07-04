@@ -3,11 +3,7 @@ var usersModel = require('../models/user');
 
 
 module.exports.add = function(user) {
-    user.save(
-        function (err)
-        {
-
-        })
+    usersModel.add(user);
 };
 
 module.exports.findAll = function(callback){

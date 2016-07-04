@@ -5,7 +5,6 @@ moviesStoreApp.controller('adminController', function($scope) {
 
     $scope.allCinemas;
 
-
     $scope.createCinema = function(){
         if(validateFields()) {
             $.ajax({
@@ -23,8 +22,8 @@ moviesStoreApp.controller('adminController', function($scope) {
     $scope.deleteCinema = function(){
             $.ajax({
                 method: 'POST',
-                url: '/deleteCinemas',
-                data: $scope.cinemaToDelete,
+                url: '/cinemas/delete',
+                data: $scope.deletedCinema,
                 dataType: 'json',
                 success: function () {
                     $state.go('home');
@@ -50,7 +49,8 @@ moviesStoreApp.controller('adminController', function($scope) {
             url: '/cinemas/all',
             dataType: 'json',
             success: function (result) {
-                $scope.allCinemas = result;
+                $scope.allCinemas = angular.copy(result);
+                $scope.isResponseRecieved = true;
             }
         });
     }
