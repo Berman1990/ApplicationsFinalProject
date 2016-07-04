@@ -30,6 +30,7 @@
     <link href="../css/index.css" rel="stylesheet">
     <link href="../css/mapCss.css" rel="stylesheet">
     <link href="../css/topRatedCss.css" rel="stylesheet">
+    <link href="../css/findMovie.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,6 +45,7 @@
     <script src="../controllers/mapController.js"></script>
     <script src="../controllers/loginController.js"></script>
     <script src="../controllers/adminController.js"></script>
+    <script src="../controllers/findMovieController.js"></script>
     <script src="../app.js"></script>
 
     <base href="/">
@@ -68,7 +70,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
-                        <a>Movies Search</a>
+                        <a ui-sref="findMovie">Movies Search</a>
                     </li>
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a ui-sref="map">Cinemas Map</a>

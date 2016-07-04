@@ -20,6 +20,12 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
                 templateUrl: 'views/about.html',
                 controller: 'homeController'
             })
+        .state('findMovie',
+            {
+                url: '/findMovie',
+                templateUrl: 'views/findMovie.html',
+                controller: 'findMovieController'
+            })
         .state('map',
             {
                 url: '/map',
