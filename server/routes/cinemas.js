@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var Cinema = require('../models/cinema');
+var controller = require('../controllers/cinema');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,27 +11,24 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/all', function(req, res) {
-    Cinema.find({},function(err, Cinemas) {
-        res.send(Cinemas);
-    });
+    controller.findAll(function(ret){
+        res.send(ret)});
 });
 
-router.get('/byId:id', function(req, res) {
-    Cinema.find({'id' : req.param('id')},function(err, movies) {
-        res.send(movies);
-    });
+router.get('/byId/:id', function(req, res) {
+    controller.findById(req.params.id, function(ret){
+        res.send(ret)});
 });
 
-router.get('/byId:id', function(req, res) {
-    Cinema.find({'id' : req.param('id')},function(err, movies) {
-        res.send(movies);
-    });
+router.get('/delete/:id', function(req, res) {
+    controller.deleteById(req.params.id, function(ret){
+        res.send(ret)});
 });
 
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+router.post('/add', function(req, res) {
+    controller.add(req.body, function(ret){
+        res.send(ret)});
 });
-
 
 
 module.exports = router;

@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<!-- Page Content -->
+<div class="container">
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/findMovie.css" rel="stylesheet">
+    <!-- Page Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Page Heading
+                <small>Secondary Text</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+    </div>
+
+    <!-- Projects Row -->
+    <div class="row">
+        <div class="col-md-4 portfolio-item" ng-repeat="movie in movies">
+            <img class="poster-size img-responsive" src="{{movie.Poster}}" alt="">
+            <h3>
+                <a href="#">{{movie.Title}}</a>
+            </h3>
+            <p>{{movie.Plot}}</p>
+        </div>
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="../js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>

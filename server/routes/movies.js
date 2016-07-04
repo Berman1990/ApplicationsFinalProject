@@ -3,38 +3,37 @@
  */
 var express = require('express');
 var router = express.Router();
-var movie = require('../models/movie');
 var http = require('http');
+var controller = require('../controllers/movie');
 
-
-/* GET movies listing. */
+/* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.send('respond with a resource moviessss');
+    res.send('respond with a resource');
 });
 
 router.get('/all', function(req, res) {
-    movie.find({},function(err, movies) {
-        res.send(movies);
-    });
+    controller.findAll(function(ret){
+        res.send(ret)});
+});
+
+router.post('/removeById/:id', function(req, res) {
+    controller.removeById(req.params.id, function(ret){
+        res.send(ret)});
 });
 
 router.get('/byDirector/:directorName', function(req, res) {
-    movie.find({'Director' : req.param('directorName')},function(err, movies) {
-        res.send(movies);
-    });
+    controller.findByDirector(req.params.directorName, function(ret){
+        res.send(ret)});
 });
 
 router.get('/byYear/:year', function(req, res) {
-    movie.find({'Year' : req.param('year')},function(err, movies) {
-        console.log(movies);
-        res.send(movies);
-    });
+    controller.findByYear(req.params.year, function(ret){
+        res.send(ret)});
 });
 
 router.get('/byGenre/:genre', function(req, res) {
-    movie.find({'Genre' : req.param('genre')},function(err, movies) {
-        res.send(movies);
-    });
+    controller.findByGenre(req.params.genre, function(ret){
+        res.send(ret)});
 });
 
 router.get('/new/:movieName', function(req, res) {

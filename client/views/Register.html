@@ -1,0 +1,13 @@
+
+
+
+<div class="register">
+    <h1>Register</h1>
+    <form method="post">
+        <input type="text" name="u" placeholder="Username" required="required" ng-model="user.userName"/> </br>
+        <input type="password" name="p" placeholder="Password" required="required" ng-model="user.password" minlength=6/> </br>
+        <input type="password" name="pv" placeholder="Password Verification" required="required" ng-model="user.scndPassword" minlength=6/> </br>
+        <input type="email" name="e" placeholder="Email" required="required" ng-model="user.email"/> </br>
+        <button type="submit" class="btn btn-primary btn-block btn-large" ng-click="register()">Register me</button>
+    </form>
+</div>

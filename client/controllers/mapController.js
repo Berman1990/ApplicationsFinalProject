@@ -11,7 +11,7 @@ function initAutocomplete() {
     });
 
     // Load Cinemas
-    $.get('/api/cinemas/all', function(cinemas) {
+    $.get('/cinemas/all', function(cinemas) {
         for (var i = 0; i < cinemas.length; i++) {
             var cinema = cinemas[i];
             var marker = new google.maps.Marker({

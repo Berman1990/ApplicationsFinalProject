@@ -1,0 +1,12 @@
+
+
+
+<div class="login">
+    <h1>Login</h1>
+    <form method="post">
+        <input type="text" name="u" placeholder="Username" required="required" ng-model="loginDetails.userName" /> </br>
+        <input type="password" name="p" placeholder="Password" required="required" ng-model="loginDetails.password"/> </br>
+        <button type="submit" class="btn btn-primary btn-block btn-large" ng-click="login()">Let me in.</button>
+    </form>
+    <h5>Not a member? <a ui-sref="register">Register now</a></h5>
+</div>
