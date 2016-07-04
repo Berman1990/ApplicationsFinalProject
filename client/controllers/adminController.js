@@ -5,7 +5,6 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
 
     $scope.allCinemas;
 
-
     $scope.createCinema = function(){
 		 mapService.getLatLeng($scope.editedCinema.address, function(lat,lng) {
 			$scope.newCinema.lat = lat;
@@ -28,8 +27,8 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
     $scope.deleteCinema = function(){
             $.ajax({
                 method: 'POST',
-                url: '/deleteCinemas',
-                data: $scope.cinemaToDelete,
+                url: '/cinemas/delete',
+                data: $scope.deletedCinema,
                 dataType: 'json',
                 success: function () {
                     $state.go('home');
@@ -60,7 +59,8 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
             url: '/cinemas/all',
             dataType: 'json',
             success: function (result) {
-                $scope.allCinemas = result;
+                $scope.allCinemas = angular.copy(result);
+                $scope.isResponseRecieved = true;
             }
         });
     };

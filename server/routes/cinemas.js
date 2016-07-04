@@ -20,8 +20,8 @@ router.get('/byId/:id', function(req, res) {
         res.send(ret)});
 });
 
-router.get('/delete/:id', function(req, res) {
-    controller.deleteById(req.params.id, function(ret){
+router.post('/delete', function(req, res) {
+    controller.deleteById(req.body.id, function(ret){
         res.send(ret)});
 });
 

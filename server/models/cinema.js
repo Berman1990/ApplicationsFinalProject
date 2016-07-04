@@ -16,7 +16,10 @@ var cinemaModel = db.model('cinemas', schema);
 module.exports = cinemaModel;
 
 module.exports.add = function(cinema) {
-    cinema.save(function (err) {})
+    new cinemaModel(cinema).save(function (err) {
+
+        console.log(err);
+    })
 };
 
 module.exports.findAll = function(callback){
