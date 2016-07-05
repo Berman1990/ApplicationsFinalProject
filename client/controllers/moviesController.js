@@ -7,25 +7,23 @@ moviesStoreApp.controller('moviesController', function($http, $scope) {
     $scope.filteredMovies = [];
 
     $scope.getAllGroups = function(){
-        $.ajax({
+        $http({
             method: 'GET',
             url: '/movies/groupbyyears',
-            dataType: 'json',
-            success: function (result) {
-                $scope.allMovies = angular.copy(result);
-            }
+            dataType: 'json'
+        }).then(function (result) {
+            $scope.allMovies = angular.copy(result.data);
         });
     };
 
     $scope.getMoviesFromYear = function(year){
-        $.ajax({
+        $http({
             method: 'POST',
             url: '/movies/search/normal',
             data: { year: year },
             dataType: 'json',
-            success: function (result) {
-                $scope.allMovies = angular.copy(result);
-            }
+        }).then(function (result) {
+            $scope.filteredMovies = angular.copy(result.data);
         });
     }
 });

@@ -15,26 +15,24 @@
         $scope.findMovie = function(){
             if ($scope.isNormalSearch)
             {
-                $.ajax({
+                $http({
                     method: 'POST',
                     url: '/movies/search/normal',
                     data: $scope.searchParams,
-                    dataType: 'json',
-                    success: function (data) {
-                        $scope.movies = data;
-                    }
+                    dataType: 'json'
+                }).then(function (data) {
+                    $scope.movies = data.data;
                 });
             }
             else
             {
-                $.ajax({
+                $http({
                     method: 'POST',
                     url: '/movies/search/normal',
                     data: $scope.searchParams,
-                    dataType: 'json',
-                    success: function (data) {
-                        $scope.movies = data;
-                    }
+                    dataType: 'json'
+                }).then(function (data) {
+                    $scope.movies = data.data;
                 });
             }
 /*

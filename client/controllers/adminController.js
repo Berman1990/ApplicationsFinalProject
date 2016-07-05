@@ -1,7 +1,7 @@
 /**
  * Created by idan on 24/04/2016.
  */
-moviesStoreApp.controller('adminController', function($scope, mapService) {
+moviesStoreApp.controller('adminController', function($scope, mapService, $http) {
 
     $scope.allCinemas;
 
@@ -11,28 +11,26 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
 			$scope.newCinema.lng = lng;
 
         if(validateFields()) {
-            $.ajax({
+            $http({
                 method: 'POST',
                 url: '/cinemas/add',
                 data: $scope.newCinema,
-                dataType: 'json',
-                success: function () {
-                    $state.go('home');
-					}
-				});
+                dataType: 'json'
+				}).then(function () {
+                $state.go('home');
+            });
 			}
 		})
     };
 
     $scope.deleteCinema = function(){
-            $.ajax({
+            $http({
                 method: 'POST',
                 url: '/cinemas/delete',
                 data: $scope.deletedCinema,
-                dataType: 'json',
-                success: function () {
-                    $state.go('home');
-                }
+                dataType: 'json'
+            }).then(function () {
+                $state.go('home');
             });
     };
 
@@ -41,27 +39,25 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
 			$scope.editedCinema.lat = lat;
 			$scope.editedCinema.lng = lng;
 			
-			$.ajax({
+			$http({
 				method: 'POST',
 				url: '/cinemas/edit',
 				data: $scope.editedCinema,
-				dataType: 'json',
-				success: function () {
-					$state.go('home');
-				}
-			});
+				dataType: 'json'
+			}).then(function () {
+                $state.go('home');
+            });
 		});
     };
 
     $scope.getAllCinemas = function(){
-        $.ajax({
+        $http({
             method: 'GET',
             url: '/cinemas/all',
-            dataType: 'json',
-            success: function (result) {
-                $scope.allCinemas = angular.copy(result);
-                $scope.isResponseRecieved = true;
-            }
+            dataType: 'json'
+        }).then(function (result) {
+            $scope.allCinemas = angular.copy(result.data);
+            $scope.isResponseRecieved = true;
         });
     };
 

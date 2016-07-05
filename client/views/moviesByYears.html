@@ -4,4 +4,16 @@
         <td><md-button class="md-raised" ng-repeat="movie in allMovies" ng-click="getMoviesFromYear(movie._id)">{{movie._id}} ({{movie.count}})</md-button>
     </tr>
 </table>
+
+    <div class="row">
+        <div class="col-md-4 portfolio-item" ng-repeat="movie in filteredMovies">
+            <img class="poster-size img-responsive" src="{{movie.Poster}}" alt="">
+            <h3>{{movie.Title}}</h3>
+            <p>Director: {{movie.Director}}</p>
+            <p>Actors: {{movie.Actors}}</p>
+            <p>Awards: {{movie.Awards}}</p>
+            <p>ImdbRating: {{movie.imdbRating}}{</p>
+            <p>{{movie.Plot}}</p>
+        </div>
+    </div>
 </div>
