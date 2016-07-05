@@ -1,0 +1,7 @@
+<div ng-init="getAllGroups()">
+<table ng-if="allMovies.length != 0" class="table table-bordered">
+    <tr>
+        <td><md-button class="md-raised" ng-repeat="movie in allMovies" ng-click="getMoviesFromYear(movie._id)">{{movie._id}} ({{movie.count}})</md-button>
+    </tr>
+</table>
+</div>

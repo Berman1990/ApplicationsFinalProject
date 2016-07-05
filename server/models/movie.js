@@ -40,6 +40,19 @@ module.exports.findAll = function(callback){
     movieModel.find({}, callback);
 };
 
+module.exports.groupByYears = function(callback){
+    movieModel.aggregate([
+        {
+            $group: {
+                _id: '$Year',  //$region is the column name in collection
+                count: {$sum: 1}
+            }
+        }
+    ], callback);
+};
+
+
+
 module.exports.findByDirector = function(Director, callback){
     movieModel.find({'Director' : Director}, callback);
 };

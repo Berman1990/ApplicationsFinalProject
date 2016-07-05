@@ -20,9 +20,8 @@
     <script src="../js/angular-1.4.8/angular-cookies.js"></script>
     <script src="../js/angular-1.4.8/angular-animate.js"></script>
     <script src="../js/angular-ui-router.min.js"></script>
-    <script src="../js/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-aria.js"></script>
     <script src="../js/angular-material.min.js"></script>
-
 
     <!-- Custom CSS -->
 	<link href="../css/bootstrap.css" rel="stylesheet">
@@ -31,6 +30,7 @@
     <link href="../css/mapCss.css" rel="stylesheet">
     <link href="../css/topRated.css" rel="stylesheet">
     <link href="../css/findMovie.css" rel="stylesheet">
+    <link href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,7 +48,7 @@
     <script src="../controllers/loginController.js"></script>
     <script src="../controllers/adminController.js"></script>
     <script src="../controllers/findMovieController.js"></script>
-    <script src="../controllers/topRatedController.js"></script>
+    <script src="../controllers/moviesController.js"></script>
     <script src="../app.js"></script>
 
     <base href="/">
@@ -73,7 +73,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
-                        <a ui-sref="topRated">Top Movies</a>
+                        <a ui-sref="moviesByYears">Top Movies</a>
                     </li>
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a ui-sref="findMovie">Movies Search</a>
@@ -120,6 +120,8 @@
     <div class="container body-content site-container">
         <div ui-view></div>
     </div>
+    </br>
+    </br>
 </div>
 <!-- Footer -->
 <footer class="site-footer">
