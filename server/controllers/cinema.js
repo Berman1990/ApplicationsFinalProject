@@ -6,6 +6,22 @@ module.exports.add = function(cinema) {
     cinemaModel.add(cinema);
 };
 
+module.exports.edit = function(cinema) {
+    var query = { _id: cinema._id };
+    var updatedObject = {
+        name: cinema.name,
+        address: cinema.address,
+        lat: cinema.lat,
+        lng: cinema.lng,
+        openingHourse: cinema.openingHourse
+    };
+    var options = { multi: true };
+    cinemaModel.update(query, updatedObject, options, function(res){
+        return;
+    })
+};
+
+
 module.exports.findAll = function(callback){
     cinemaModel.findAll(function (err, cinemas) {
         if (err) {

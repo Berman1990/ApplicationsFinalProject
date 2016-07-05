@@ -15,19 +15,20 @@ router.get('/all', function(req, res) {
         res.send(ret)});
 });
 
-router.get('/byId/:id', function(req, res) {
-    controller.findById(req.params.id, function(ret){
-        res.send(ret)});
-});
-
 router.post('/delete', function(req, res) {
-    controller.deleteById(req.body.id, function(ret){
+    controller.deleteById(req.body._id, function(ret){
         res.send(ret)});
 });
 
 router.post('/add', function(req, res) {
     controller.add(req.body, function(ret){
         res.send(ret)});
+});
+
+router.post('/edit', function(req, res) {
+    controller.edit(req.body, function(req){
+            res.send(ret)
+    });
 });
 
 

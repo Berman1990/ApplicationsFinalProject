@@ -43,7 +43,7 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
 			
 			$.ajax({
 				method: 'POST',
-				url: '/editCinemas',
+				url: '/cinemas/edit',
 				data: $scope.editedCinema,
 				dataType: 'json',
 				success: function () {
