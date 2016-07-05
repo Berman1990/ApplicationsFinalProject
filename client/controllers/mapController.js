@@ -4,20 +4,12 @@
  */
 moviesStoreApp.service('mapService', function() {
 
-	var geocoder = new google.maps.Geocoder();
-
 	this.getLatLeng = function(address, callback)
 	{
-		geocoder.geocode({ 'address': address }, function (results, status)
-		{
-			if (status == google.maps.GeocoderStatus.OK)
-			{
-				callback(
-					results[0].geometry.location.lat(),
-					results[0].geometry.location.lng()
-				);
-			}
-		});
+        var strLink = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyAuW9c5XjRG4VPXzUQ5tF0Sjv6Vdgmz1Sc"
+        $.get(strLink, function (data, status) {
+            callback(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
+        });
 	}		
 });
 

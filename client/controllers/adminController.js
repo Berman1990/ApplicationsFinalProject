@@ -6,10 +6,10 @@ moviesStoreApp.controller('adminController', function($scope, mapService) {
     $scope.allCinemas;
 
     $scope.createCinema = function(){
-		 mapService.getLatLeng($scope.editedCinema.address, function(lat,lng) {
+		 mapService.getLatLeng($scope.newCinema.address, function(lat,lng) {
 			$scope.newCinema.lat = lat;
 			$scope.newCinema.lng = lng;
-			
+
         if(validateFields()) {
             $.ajax({
                 method: 'POST',

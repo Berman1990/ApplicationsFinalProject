@@ -4,7 +4,6 @@
 var db = require('../app').db;
 
 var schema = new db.Schema({
-    id: { type: Number, unique: true },
     name: String,
     address: String,
     lat: Number,
