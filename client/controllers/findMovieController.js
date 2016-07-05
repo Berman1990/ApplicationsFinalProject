@@ -5,7 +5,7 @@
     moviesStoreApp.controller('findMovieController', function($http, $scope) {
         $scope.isNormalSearch = true;
         $scope.isAdvancedSearch = false;
-
+        $scope.searchParams = {};
         /*
         $http.get('/movies/all').success(function (data) {
             $scope.movies = data;
@@ -22,7 +22,6 @@
                     dataType: 'json',
                     success: function (data) {
                         $scope.movies = data;
-                        $state.go('home');
                     }
                 });
             }
@@ -35,14 +34,14 @@
                     dataType: 'json',
                     success: function (data) {
                         $scope.movies = data;
-                        $state.go('home');
                     }
                 });
             }
-
+/*
             $http.get('/movies/all').success(function (data) {
                 $scope.movies = data;
             });
+            */
         }
 
         $scope.normalSearchClicked = function() {
