@@ -40,6 +40,19 @@ router.get('/new/:movieName', function(req, res) {
     getMoviefromService(req.param('movieName'));
 });
 
+router.post('/search/normal', function(req, res) {
+
+    controller.normalSearch(req.param, function(ret){
+        res.send(ret);
+    });
+});
+
+router.post('/search/advanced', function(req, res) {
+    controller.advancedSearch(req.param, function(ret){
+        res.send(ret);
+    });
+});
+
 function getMoviefromService(movieName) {
     var optionsget = {
         host : 'www.omdbapi.com',

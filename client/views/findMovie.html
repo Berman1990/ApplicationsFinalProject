@@ -9,8 +9,8 @@
     <!-- Page Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Page Heading
-                <small>Secondary Text</small>
+            <h1 class="page-header">Movies Search
+                <small>what do you want to whach? </small>
             </h1>
         </div>
     </div>
@@ -18,7 +18,30 @@
 
     <div class="row">
         <div class="col-lg-12">
+            <div class="searchMovies" style="padding-top: 30px;">
+                <form method="post">
+                    <input type="radio" name="search" ng-click="normalSearchClicked()" value="normal" checked="checked"> Normal Search </input>
+                    <input type="radio" name="search" ng-click="advancedSearchClicked()" value="advanced"> Advanced Search </input> </br></br>
 
+                    <div id="NormalSearch" ng-if="isNormalSearch">
+                        <input type="text" name="movieName" placeholder="Movie Name" ng-model="searchParams.name"/>
+                        <input type="text" name="director" placeholder="Director" ng-model="searchParams.director"/>
+                        <input type="text" name="year" placeholder="Year" ng-model="searchParams.year"/>
+                    </div>
+
+                    <div id="AdvancedSearch" ng-if="isAdvancedSearch">
+                        <input type="text" name="actor" placeholder="Actor" ng-model="searchParams.actor"/>
+                        <input type="text" name="ganer" placeholder="Genre" ng-model="searchParams.ganre"/>
+                        <input type="text" name="imdbRating" placeholder="Greater then rating" ng-model="searchParams.rating"/></br>
+                        <input type="text" name="Award" placeholder="Award" ng-model="searchParams.award"/>
+                    </div>
+                    </br>
+
+                    <button type="submit" class="btn btn-primary btn-large" ng-click="findMovie()">Find my movie</button>
+                    </br>
+
+                </form>
+            </div>
         </div>
     </div>
 
