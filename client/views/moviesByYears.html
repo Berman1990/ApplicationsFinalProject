@@ -5,8 +5,8 @@
     </tr>
 </table>
 
-    <div class="row">
-        <div class="col-md-4 portfolio-item" ng-repeat="movie in filteredMovies">
+    <div class="row" class="animate-if">
+        <div class="col-md-4 portfolio-item animate-if" ng-repeat="movie in filteredMovies">
             <img class="poster-size img-responsive" src="{{movie.Poster}}" alt="">
             <h3>{{movie.Title}}</h3>
             <p>Director: {{movie.Director}}</p>

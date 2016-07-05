@@ -3,6 +3,12 @@
  */
 
 moviesStoreApp.controller('homeController', function($scope) {
+
+    var c = document.getElementById("logoCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("imgForCanvas");
+    ctx.drawImage(img,0,0);
+
     $scope.menuItems = [{displayName: 'Home', link: "#"},
         {displayName: 'Contact', link: "/contact"},
         {displayName: 'About', link: "/about"},
