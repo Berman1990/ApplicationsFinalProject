@@ -26,11 +26,11 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/findMovie.html',
             controller: 'findMovieController'
         })
-        .state('topRated',
+        .state('moviesByYears',
             {
-                url: '/topRated',
-                templateUrl: 'views/topRated.html',
-                controller: 'topRatedController'
+                url: '/moviesByYears',
+                templateUrl: 'views/moviesByYears.html',
+                controller: 'moviesController'
             })
         .state('map',
             {

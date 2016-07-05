@@ -48,6 +48,12 @@ router.post('/search/normal', function(req, res) {
     });
 });
 
+router.get('/groupbyyears', function(req, res) {
+    controller.groupByYears(function(ret){
+        res.send(ret);
+    });
+});
+
 router.post('/search/advanced', function(req, res) {
     controller.advancedSearch(req.body, function(ret){
         res.send(ret);

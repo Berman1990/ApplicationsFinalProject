@@ -22,8 +22,8 @@ router.get('/findmovie', function(req, res) {
 });
 
 /* GET home page. */
-router.get('/toprated', function(req, res) {
-  res.sendFile(path.resolve('../client/views/topRated.html'));
+router.get('/moviesbyyears', function(req, res) {
+  res.sendFile(path.resolve('../client/views/moviesByYears.html'));
 });
 
 /* GET home page. */

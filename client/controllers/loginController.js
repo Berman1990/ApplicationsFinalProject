@@ -2,7 +2,7 @@
  * Created by matan on 02-Jul-16.
  */
 moviesStoreApp
-    .controller('loginController',['$scope','$state','$resource','loginService', function ($scope, $state,$resource, loginService) {
+    .controller('loginController',['$scope','$state','$resource','loginService', '$http', function ($scope, $state,$resource, loginService, $http) {
     var user = loginService.getLoggedUser();
     if(user != null)
     {
@@ -42,21 +42,20 @@ moviesStoreApp
     $scope.login = function (){
         if(validateLoginFields())
         {
-            $.ajax({
+            $http({
                 method   : 'POST',
                 url      : '/login',
                 data     : $scope.loginDetails,
-                dataType : 'json',
-                success: function(user) {
-                    if(user)
-                    {
-                        loginService.setLoggedUSer(user);
-                        $state.go('home');
-                    }
-                    else {
-                        $scope.error = "Username or password were wrong";
-                        $scope.$apply();
-                    }
+                dataType : 'json'
+            }).then(function(user) {
+                if(user.data)
+                {
+                    loginService.setLoggedUSer(user.data);
+                    $state.go('home');
+                }
+                else {
+                    $scope.error = "Username or password were wrong";
+                    $scope.$apply();
                 }
             });
         }
@@ -65,20 +64,19 @@ moviesStoreApp
     $scope.register = function(){
         if(validateFields())
         {
-            $.ajax({
+            $http({
                 method   : 'POST',
                 url      : '/users/add',
                 data     : JSON.stringify($scope.user),
-                dataType : 'json',
-                success: function(result) {
-                    if(result.error != null || result.error != undefined)
-                    {
-                        $scope.error = "Username taken";
-                        $scope.$apply();
-                    }else {
-                        loginService.setLoggedUSer(result);
-                        $state.go('home');
-                    }
+                dataType : 'json'
+            }).then(function(result) {
+                if(result.error != null || result.error != undefined)
+                {
+                    $scope.error = "Username taken";
+                    $scope.$apply();
+                }else {
+                    loginService.setLoggedUSer(result.data);
+                    $state.go('home');
                 }
             });
         }

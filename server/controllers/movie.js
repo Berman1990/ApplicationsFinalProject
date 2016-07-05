@@ -48,6 +48,17 @@ module.exports.findByDirector = function(directorName, callback){
     });
 };
 
+module.exports.groupByYears = function(callback){
+    movieModel.groupByYears(function (err, cinemas) {
+        if (err) {
+            callback("server error");
+        }
+        else {
+            callback(cinemas);
+        }
+    });
+};
+
 module.exports.findByYear = function(year, callback){
     movieModel.findByYear(year, function (err, cinemas) {
         if (err) {
