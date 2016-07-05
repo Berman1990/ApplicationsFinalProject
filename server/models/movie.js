@@ -72,10 +72,10 @@ module.exports.normalSearch = function (query, callback) {
 
     var search = movieModel.find();
     if (query.name !== undefined && query.name.length != 0){
-        search.where('Title').regex('/' + query.name + '/i');
+        search.where('Title').regex(new RegExp(query.name,"i"));
     }
     if (query.director !== undefined && query.director.length != 0){
-        search.where('Director').regex('/' + query.director + '/i');
+        search.where('Director').regex(new RegExp(query.director,"i"));
     }
     if (query.year !== undefined && query.year.length != 0){
         search.where('Year').equals(query.year);
