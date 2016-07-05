@@ -51,3 +51,56 @@ module.exports.findByYear = function(Year, callback){
 module.exports.findByGenre = function(Genre, callback){
     movieModel.find({'Genre' : Genre}, callback);
 };
+
+
+module.exports.normalSearch = function (query, callback) {
+    console.log('query: ');
+    console.log(query);
+    //pcModel.find({ 'att_cpu':query.att_cpu}, function(err, docs){
+    //    console.log(docs);
+    //    callback(docs);
+    //});
+    /*
+    var query2 = pcModel.find();
+    if (query.att_brand.length > 0){
+        query2.where('att_brand').in(query.att_brand)
+    }
+    if (query.att_cpu !== undefined){
+        query2.where('att_cpu', query.att_cpu);
+    }
+    if (query.att_screen_size !== undefined){
+        query2.where('att_screen_size', query.att_screen_size);
+    }
+
+    query2.exec(function(err, docs){
+        //console.log(docs);
+        callback(docs);
+    });
+    */
+};
+
+module.exports.advancedSearch = function (query, callback) {
+    console.log('query: ');
+    console.log(query);
+    //pcModel.find({ 'att_cpu':query.att_cpu}, function(err, docs){
+    //    console.log(docs);
+    //    callback(docs);
+    //});
+    /*
+    var query2 = pcModel.find();
+    if (query.att_brand.length > 0){
+        query2.where('att_brand').in(query.att_brand)
+    }
+    if (query.att_cpu !== undefined){
+        query2.where('att_cpu', query.att_cpu);
+    }
+    if (query.att_screen_size !== undefined){
+        query2.where('att_screen_size', query.att_screen_size);
+    }
+
+    query2.exec(function(err, docs){
+        //console.log(docs);
+        callback(docs);
+    });
+*/
+};

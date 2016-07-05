@@ -69,3 +69,25 @@ module.exports.findByGenre = function(genre, callback){
         }
     });
 };
+
+module.exports.advancedSearch = function(query, callback){
+    movieModel.advancedSearch(query, function (err, movies) {
+        if (err) {
+            callback("server error");
+        }
+        else {
+            callback(movies);
+        }
+    });
+};
+
+module.exports.normalSearch = function(query, callback){
+    movieModel.normalSearch(query, function (err, movies) {
+        if (err) {
+            callback("server error");
+        }
+        else {
+            callback(movies);
+        }
+    });
+};
