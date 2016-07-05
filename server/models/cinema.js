@@ -4,7 +4,6 @@
 var db = require('../app').db;
 
 var schema = new db.Schema({
-    id: { type: Number, unique: true },
     name: String,
     address: String,
     lat: Number,
@@ -16,7 +15,10 @@ var cinemaModel = db.model('cinemas', schema);
 module.exports = cinemaModel;
 
 module.exports.add = function(cinema) {
-    cinema.save(function (err) {})
+    new cinemaModel(cinema).save(function (err) {
+
+        console.log(err);
+    })
 };
 
 module.exports.findAll = function(callback){

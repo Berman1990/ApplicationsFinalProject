@@ -1,7 +1,7 @@
 var movieModel = require('../models/movie');
 
 module.exports.add = function(movie) {
-    movie.save(function (err) {})
+    movieModel.add(movie);
 };
 
 module.exports.removeById = function(id, callback){

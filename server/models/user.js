@@ -14,7 +14,7 @@ var userModel = db.model('users', schema);
 module.exports = userModel;
 
 module.exports.add = function(user) {
-    user.save(function (err) {})
+    new userModel(user).save(function (err) {})
 };
 
 module.exports.findAll = function(callback){

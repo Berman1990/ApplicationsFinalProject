@@ -1,12 +1,15 @@
 /**
  * Created by idan on 24/04/2016.
  */
-moviesStoreApp.controller('adminController', function($scope) {
+moviesStoreApp.controller('adminController', function($scope, mapService) {
 
     $scope.allCinemas;
 
-
     $scope.createCinema = function(){
+		 mapService.getLatLeng($scope.newCinema.address, function(lat,lng) {
+			$scope.newCinema.lat = lat;
+			$scope.newCinema.lng = lng;
+
         if(validateFields()) {
             $.ajax({
                 method: 'POST',
@@ -15,16 +18,17 @@ moviesStoreApp.controller('adminController', function($scope) {
                 dataType: 'json',
                 success: function () {
                     $state.go('home');
-                }
-            });
-        }
+					}
+				});
+			}
+		})
     };
 
     $scope.deleteCinema = function(){
             $.ajax({
                 method: 'POST',
-                url: '/deleteCinemas',
-                data: $scope.cinemaToDelete,
+                url: '/cinemas/delete',
+                data: $scope.deletedCinema,
                 dataType: 'json',
                 success: function () {
                     $state.go('home');
@@ -33,15 +37,20 @@ moviesStoreApp.controller('adminController', function($scope) {
     };
 
     $scope.editCinema = function(){
-        $.ajax({
-            method: 'POST',
-            url: '/editCinemas',
-            data: $scope.editedCinema,
-            dataType: 'json',
-            success: function () {
-                $state.go('home');
-            }
-        });
+	    mapService.getLatLeng($scope.editedCinema.address, function(lat,lng) {
+			$scope.editedCinema.lat = lat;
+			$scope.editedCinema.lng = lng;
+			
+			$.ajax({
+				method: 'POST',
+				url: '/cinemas/edit',
+				data: $scope.editedCinema,
+				dataType: 'json',
+				success: function () {
+					$state.go('home');
+				}
+			});
+		});
     };
 
     $scope.getAllCinemas = function(){
@@ -50,10 +59,11 @@ moviesStoreApp.controller('adminController', function($scope) {
             url: '/cinemas/all',
             dataType: 'json',
             success: function (result) {
-                $scope.allCinemas = result;
+                $scope.allCinemas = angular.copy(result);
+                $scope.isResponseRecieved = true;
             }
         });
-    }
+    };
 
     var validateFields = function(){
         if($scope.newCinema.name === "" || $scope.newCinema.name === undefined ||
@@ -65,5 +75,6 @@ moviesStoreApp.controller('adminController', function($scope) {
         }
 
         return true;
-    }
+    };
+	
 });

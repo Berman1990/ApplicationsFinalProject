@@ -33,7 +33,7 @@ module.exports.removeById = function(id, callback){
 };
 
 module.exports.add = function(movie) {
-    movie.save(function (err) {})
+    new movieModel(movie).save(function (err) {})
 };
 
 module.exports.findAll = function(callback){

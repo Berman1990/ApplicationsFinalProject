@@ -7,7 +7,6 @@ var moviesStoreApp = angular.module( 'moviesStoreApp',
         'uiRouterApp',
         'ngAnimate',
         'ngResource',
-        'ngMaterial',
         'ngCookies',
         'ngMaterial'
     ] );
