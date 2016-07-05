@@ -69,51 +69,46 @@ module.exports.findByGenre = function(Genre, callback){
 module.exports.normalSearch = function (query, callback) {
     console.log('query: ');
     console.log(query);
-    //pcModel.find({ 'att_cpu':query.att_cpu}, function(err, docs){
-    //    console.log(docs);
-    //    callback(docs);
-    //});
-    /*
-    var query2 = pcModel.find();
-    if (query.att_brand.length > 0){
-        query2.where('att_brand').in(query.att_brand)
+
+    var search = movieModel.find();
+    if (query.name !== undefined && query.name.length != 0){
+        search.where('Title').regex('/' + query.name + '/i');
     }
-    if (query.att_cpu !== undefined){
-        query2.where('att_cpu', query.att_cpu);
+    if (query.director !== undefined && query.director.length != 0){
+        search.where('Director').regex('/' + query.director + '/i');
     }
-    if (query.att_screen_size !== undefined){
-        query2.where('att_screen_size', query.att_screen_size);
+    if (query.year !== undefined && query.year.length != 0){
+        search.where('Year').equals(query.year);
     }
 
-    query2.exec(function(err, docs){
+    search.exec(function(err, docs){
         //console.log(docs);
         callback(docs);
     });
-    */
+
 };
 
 module.exports.advancedSearch = function (query, callback) {
     console.log('query: ');
     console.log(query);
-    //pcModel.find({ 'att_cpu':query.att_cpu}, function(err, docs){
-    //    console.log(docs);
-    //    callback(docs);
-    //});
-    /*
-    var query2 = pcModel.find();
-    if (query.att_brand.length > 0){
-        query2.where('att_brand').in(query.att_brand)
+
+    var search = movieModel.find();
+    if (query.actor !== undefined && query.actor.length != 0){
+        search.where('Title').regex('/' + query.name + '/i');
     }
-    if (query.att_cpu !== undefined){
-        query2.where('att_cpu', query.att_cpu);
+    if (query.ganre !== undefined && query.ganre.length != 0){
+        search.where('Ganre').regex('/' + query.ganre + '/i');
     }
-    if (query.att_screen_size !== undefined){
-        query2.where('att_screen_size', query.att_screen_size);
+    if (query.rating !== undefined && query.rating.length != 0){
+        search.where('imdbRating').gte(query.rating);
+    }
+    if (query.award !== undefined && query.Award.length != 0){
+        search.where('Awards',query.Award);
     }
 
-    query2.exec(function(err, docs){
+    search.exec(function(err, docs){
         //console.log(docs);
         callback(docs);
     });
-*/
+
 };

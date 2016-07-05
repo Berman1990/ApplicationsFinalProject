@@ -82,7 +82,7 @@ module.exports.findByGenre = function(genre, callback){
 };
 
 module.exports.advancedSearch = function(query, callback){
-    movieModel.advancedSearch(query, function (err, movies) {
+    movieModel.advancedSearch(query, function (movies, err) {
         if (err) {
             callback("server error");
         }
@@ -93,7 +93,7 @@ module.exports.advancedSearch = function(query, callback){
 };
 
 module.exports.normalSearch = function(query, callback){
-    movieModel.normalSearch(query, function (err, movies) {
+    movieModel.normalSearch(query, function (movies, err) {
         if (err) {
             callback("server error");
         }

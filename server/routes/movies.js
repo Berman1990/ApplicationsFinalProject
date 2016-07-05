@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 var http = require('http');
 var controller = require('../controllers/movie');
+var movie = require('../models/movie');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -42,7 +43,7 @@ router.get('/new/:movieName', function(req, res) {
 
 router.post('/search/normal', function(req, res) {
 
-    controller.normalSearch(req.param, function(ret){
+    controller.normalSearch(req.body, function(ret){
         res.send(ret);
     });
 });
@@ -54,7 +55,7 @@ router.get('/groupbyyears', function(req, res) {
 });
 
 router.post('/search/advanced', function(req, res) {
-    controller.advancedSearch(req.param, function(ret){
+    controller.advancedSearch(req.body, function(ret){
         res.send(ret);
     });
 });
@@ -63,7 +64,7 @@ function getMoviefromService(movieName) {
     var optionsget = {
         host : 'www.omdbapi.com',
         port : 80,
-        path: '/?t=' + movieName + '&y=&plot=short&r=json',
+        path: '/?t=' + encodeURIComponent(movieName) + '&y=&plot=short&r=json',
         method : 'GET' // do GET
     };
 

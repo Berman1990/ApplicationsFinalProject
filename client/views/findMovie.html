@@ -33,7 +33,7 @@
                         <input type="text" name="actor" placeholder="Actor" ng-model="searchParams.actor"/>
                         <input type="text" name="ganer" placeholder="Genre" ng-model="searchParams.ganre"/>
                         <input type="text" name="imdbRating" placeholder="Greater then rating" ng-model="searchParams.rating"/></br>
-                        <input type="text" name="Award" placeholder="Award" ng-model="searchParams.award"/>
+                        <input type="text" name="award" placeholder="Award" ng-model="searchParams.award"/>
                     </div>
                     </br>
 
@@ -49,9 +49,11 @@
     <div class="row">
         <div class="col-md-4 portfolio-item" ng-repeat="movie in movies">
             <img class="poster-size img-responsive" src="{{movie.Poster}}" alt="">
-            <h3>
-                <a href="#">{{movie.Title}}</a>
-            </h3>
+            <h3>{{movie.Title}}</h3>
+            <p>Director: {{movie.Director}}</p>
+            <p>Actors: {{movie.Actors}}</p>
+            <p>Awards: {{movie.Awards}}</p>
+            <p>ImdbRating: {{movie.imdbRating}}{</p>
             <p>{{movie.Plot}}</p>
         </div>
     </div>
