@@ -84,6 +84,7 @@ function getMoviefromService(movieName) {
                 }
                 else {
                     console.log("Post saved");
+                    return v;
                 }
             });
             console.info('\n\nCall completed');

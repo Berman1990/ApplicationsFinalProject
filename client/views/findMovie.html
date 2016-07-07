@@ -31,7 +31,7 @@
 
                     <div id="AdvancedSearch" ng-if="isAdvancedSearch">
                         <input type="text" name="actor" placeholder="Actor" ng-model="searchParams.actor"/>
-                        <input type="text" name="ganer" placeholder="Genre" ng-model="searchParams.ganre"/>
+                        <input type="text" name="gener" placeholder="Genre" ng-model="searchParams.genre"/>
                         <input type="text" name="imdbRating" placeholder="Greater then rating" ng-model="searchParams.rating"/></br>
                         <input type="text" name="award" placeholder="Award" ng-model="searchParams.award"/>
                     </div>
@@ -50,11 +50,12 @@
         <div class="col-md-4 portfolio-item" ng-repeat="movie in movies">
             <img class="poster-size img-responsive" src="{{movie.Poster}}" alt="">
             <h3>{{movie.Title}}</h3>
+            <p>{{movie.Plot}}</p>
             <p>Director: {{movie.Director}}</p>
+            <p>Genre: {{movie.Genre}}</p>
             <p>Actors: {{movie.Actors}}</p>
             <p>Awards: {{movie.Awards}}</p>
-            <p>ImdbRating: {{movie.imdbRating}}{</p>
-            <p>{{movie.Plot}}</p>
+            <p>ImdbRating: {{movie.imdbRating}}</p>
         </div>
     </div>
     <!-- /.row -->

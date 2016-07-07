@@ -10,12 +10,12 @@ var schema = new db.Schema({
     Rated : String,
     Released : Date,
     Runtime : String,
-    Genre : [String],
+    Genre : String,
     Director : String,
-    Writer : [String],
-    Actors : [String],
+    Writer : String,
+    Actors : String,
     Plot : String,
-    Language : [String],
+    Language : String,
     Country : String,
     Awards : String,
     Poster : String,
@@ -94,16 +94,16 @@ module.exports.advancedSearch = function (query, callback) {
 
     var search = movieModel.find();
     if (query.actor !== undefined && query.actor.length != 0){
-        search.where('Title').regex('/' + query.name + '/i');
+        search.where('Actors').regex(new RegExp(query.actor,"i"));
     }
-    if (query.ganre !== undefined && query.ganre.length != 0){
-        search.where('Ganre').regex('/' + query.ganre + '/i');
+    if (query.genre !== undefined && query.genre.length != 0){
+        search.where('Genre').regex(new RegExp(query.genre,"i"));
     }
     if (query.rating !== undefined && query.rating.length != 0){
         search.where('imdbRating').gte(query.rating);
     }
-    if (query.award !== undefined && query.Award.length != 0){
-        search.where('Awards',query.Award);
+    if (query.award !== undefined && query.award.length != 0){
+        search.where('Awards').regex(new RegExp(query.award,"i"));
     }
 
     search.exec(function(err, docs){
