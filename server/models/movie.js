@@ -19,7 +19,7 @@ var schema = new db.Schema({
     Country : String,
     Awards : String,
     Poster : String,
-    Metascore : Number,
+    Metascore : String,
     imdbRating : Number,
     imdbVotes : String,
     imdbID : {type:String, unique: true}
