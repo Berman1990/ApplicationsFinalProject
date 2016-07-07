@@ -32,13 +32,10 @@ function getInfoWindow(cinema)
 }
 
 function addInfoWindow(marker, message) {
-	alert(message);
-
 	var infoWindow = new google.maps.InfoWindow({
 		content: message
 	});
 
-	alert("1");
 	marker.addListener('click', function () {
 		infoWindow.open(map, marker);
 	});
