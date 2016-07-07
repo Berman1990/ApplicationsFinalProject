@@ -2,7 +2,6 @@
 /**
  * Created by idan on 24/04/2016.
  */
-
 moviesStoreApp.service('mapService', function() {
 
 	this.getLatLeng = function(address, callback)
@@ -11,15 +10,44 @@ moviesStoreApp.service('mapService', function() {
         $.get(strLink, function (data, status) {
             callback(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
         });
-	}		
+	}
+
 });
 
+var map;
 
+function getInfoWindow(cinema)
+{
+	var contentString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">' + cinema.name + '</h1>'+
+						'<div id="bodyContent">'+
+						'<p><b>' + cinema.name + '</b></p>'+
+						'<p>Adress: ' + cinema.address + '</p>' +
+						'<p>Opening Hourse: ' + cinema.openingHourse + '</p>' +
+						'</div>'+
+						'</div>';
+	return contentString;
+}
+
+function addInfoWindow(marker, message) {
+	alert(message);
+
+	var infoWindow = new google.maps.InfoWindow({
+		content: message
+	});
+
+	alert("1");
+	marker.addListener('click', function () {
+		infoWindow.open(map, marker);
+	});
+}
 
 function initAutocomplete() {
 	
 	// Init map
-	var map = new google.maps.Map(document.getElementById("map"), {
+	map = new google.maps.Map(document.getElementById("map"), {
 		center: new google.maps.LatLng(31.501857, 35.141051),
 		zoom: 7,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -35,6 +63,9 @@ function initAutocomplete() {
 				animation: google.maps.Animation.DROP,
 				title: cinema.name
 			});
+
+			var info = getInfoWindow(cinema)
+			addInfoWindow(marker,info);
 		}
 	});
 
