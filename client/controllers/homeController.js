@@ -3,6 +3,7 @@
  */
 
 moviesStoreApp.controller('homeController', function($scope) {
+
     $scope.menuItems = [{displayName: 'Home', link: "#"},
         {displayName: 'Contact', link: "/contact"},
         {displayName: 'About', link: "/about"},
@@ -13,7 +14,15 @@ moviesStoreApp.controller('homeController', function($scope) {
         $scope.activeMenu = menuItem
     }
 
-    $scope.login = function(usere) {
+    $scope.initLogo = function() {
+        var canvas = document.getElementById("logoCanvas");
+        var context = canvas.getContext("2d");
 
+        var img = new Image();
+        img.src = document.getElementById("imgForCanvas").src;
+
+        img.onload = function () {
+            context.drawImage(img, 0, 0);
+        };
     }
 });

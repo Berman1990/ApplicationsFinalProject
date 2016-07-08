@@ -1,65 +1,15 @@
-
-<div>
+<div ng-init="initLogo()" style="text-align: center">
     <div class="row">
-        <div class="col-md-10">
-            <video id="homevideo" width="80%" autoplay controls onended="run()">
-
+        <img src="../assests/images/Logo.png" id="imgForCanvas" hidden="true">
+        <canvas id="logoCanvas" width="300px" height="300px"></canvas>
+        <h3>Welcome to world cinema. </br>
+        Here we will show you the best movies and the best places to watch them!</h3>
+    </div>
+    <div class="row">
+            <video id="homevideo" width="100%" autoplay controls onended="run()">
+                <source src="http://movietrailers.apple.com/movies/marvel/captainamericacivilwar/captainamericacivilwar-tlr1_a720p.m4v" type="video/mp4">
             </video>
-        </div>
     </div>
-    <div class="container-fluid">
-        <form class="navbar-form navbar-left row" role="search">
-            <button class="btn-link" ng-click="openAdvanceSearchInstruction()" >חיפוש מתקדם</button>
-            <div class="form-group">
-                <input type="text" ng-model="searchQuery" class="form-control" style="padding-top: 10px; margin-top: 1px; border-radius: 1px" placeholder="חיפוש" name="searchString">
-            </div>
-            <button ui-sref="searchResult({searchQuery: searchQuery })" class="btn btn-info glyphicon glyphicon-search" style="border-radius: 1px"></button>
-        </form>
-    </div>
-    <div class="site-content" ng-init="getAllMedia()">
-        <div class="row" style="height: 100%">
-            <div class="col-md-6 content-column">
-                <div class="row">
-                    <div class="col-md-9 home-header">
-                        הסרטים החדשים ביותר
-                    </div>
-                </div>
-                <div ng-repeat="media in allMedia">
-                    <div class="row content-row" ng-if="media.mediaType === '1'">
-                        <div class="col-md-7">
-                            <div class="row">
-                                <div class="col-md-4">{{media.releaseDate.toLocaleDateString()}}</div>
-                                <div class="col-md-8"><a ui-sref="mediaDetails({mediaId: '{{media._id}}' })">{{media.hebrewTitle}}</a></div>
-                            </div>
-                        </div>
-                        <div class="col-md-5" style="padding: 0;">
-                            <img style="width: 100%; height: 130px" ng-src="{{media.image}}"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 content-column">
-                <div class="row">
-                    <div class="row">
-                        <div class="col-md-9 home-header">
-                            הסדרות החדשות ביותר
-                        </div>
-                    </div>
-                    <div  ng-repeat="media in allMedia">
-                        <div class="row content-row" ng-if="media.mediaType === '2'">
-                            <div class="col-md-7">
-                                <div class="row">
-                                    <div class="col-md-4">{{media.releaseDate.toLocaleDateString()}}</div>
-                                    <div class="col-md-8"><a ui-sref="mediaDetails({mediaId: '{{media._id}}' })">{{media.hebrewTitle}}</a></div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <img style="width: 100%; height: 130px" ng-src="{{media.image}}"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <h3>Made by Idan Berman, Or Shapira and Matan Borenkraout</h3>
 </div>
