@@ -1,11 +1,15 @@
-
-<div>
-    <div class="row" style="text-align: center">
+<div ng-init="initLogo()" style="text-align: center">
+    <div class="row">
+        <img src="../assests/images/Logo.png" id="imgForCanvas" hidden="true">
+        <canvas id="logoCanvas" width="300px" height="300px"></canvas>
         <h3>Welcome to world cinema. </br>
         Here we will show you the best movies and the best places to watch them!</h3>
     </div>
     <div class="row">
-            <video id="homevideo" width="80%" autoplay controls onended="run()">
+            <video id="homevideo" width="100%" autoplay controls onended="run()">
+                <source src="http://movietrailers.apple.com/movies/marvel/captainamericacivilwar/captainamericacivilwar-tlr1_a720p.m4v" type="video/mp4">
             </video>
     </div>
+
+    <h3>Made by Idan Berman, Or Shapira and Matan Borenkraout</h3>
 </div>
