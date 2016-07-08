@@ -11,7 +11,22 @@ moviesStoreApp.service('mapService', function() {
             callback(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
         });
 	}
+});
 
+moviesStoreApp.controller('mapController', function($scope, mapService, $http) {
+
+	$scope.allCinemas = [];
+	
+	$scope.getAllCinemas = function(){
+		$http({
+			method: 'GET',
+			url: '/cinemas/all',
+			dataType: 'json'
+		}).then(function (result) {
+			$scope.allCinemas = angular.copy(result.data);
+			$scope.isResponseRecieved = true;
+		});
+	};
 });
 
 var map;

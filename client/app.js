@@ -35,7 +35,8 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
         .state('map',
             {
                 url: '/map',
-                templateUrl: 'views/map.html'
+                templateUrl: 'views/map.html',
+                controller: 'mapController'
             })
         .state('login',
             {

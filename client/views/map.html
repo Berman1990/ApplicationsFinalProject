@@ -12,6 +12,23 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
+<div ng-init="getAllCinemas()">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="cinema in allCinemas">
+            <td>{{cinema.name}}</td>
+            <td>{{cinema.address}}</td>
+        </tr>
+    </table>
+
+</div>
+
+
 <h1 id="mapHeadline" class="featurette-heading">Search Your Cinema</h1>
 
 <input id="pac-input" class="controls" type="text" placeholder="Cinema Search">
