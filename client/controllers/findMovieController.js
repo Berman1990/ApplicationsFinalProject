@@ -1,8 +1,8 @@
 /**
  * Created by idan on 13/05/2016.
  */
-
-    moviesStoreApp.controller('findMovieController', function($http, $scope) {
+    var searchApp = angular.module('searchApp', []);
+    searchApp.controller('findMovieController', function($http, $scope) {
         $scope.isNormalSearch = true;
         $scope.isAdvancedSearch = false;
         $scope.searchParams = {};

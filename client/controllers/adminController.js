@@ -1,7 +1,9 @@
 /**
  * Created by idan on 24/04/2016.
  */
-moviesStoreApp.controller('adminController', function($scope, mapService, $http) {
+var adminApp = angular.module('adminApp', []);
+
+adminApp.controller('adminController', function($scope, mapService, $http) {
 
     $scope.allCinemas;
 

@@ -8,7 +8,9 @@ var moviesStoreApp = angular.module( 'moviesStoreApp',
         'ngAnimate',
         'ngResource',
         'ngCookies',
-        'ngMaterial'
+        'ngMaterial',
+        'adminApp',
+        'searchApp'
     ] );
 	
 var socket = io.connect('http://localhost:8000', 
