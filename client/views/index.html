@@ -81,9 +81,9 @@
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a ui-sref="map">Cinemas Map</a>
                     </li>
-                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
-                        <a ui-sref="about">About us</a>
-                    </li>
+                    <!--<li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">-->
+                        <!--<a ui-sref="about">About us</a>-->
+                    <!--</li>-->
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a ui-sref="login">Login</a>
                     </li>
@@ -117,9 +117,9 @@
         </div>
     </header>
 
-    <div class="container body-content site-container">
+    <section class="container body-content site-container">
         <div ui-view></div>
-    </div>
+    </section>
     </br>
     </br>
 </div>
