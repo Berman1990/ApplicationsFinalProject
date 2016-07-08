@@ -28,7 +28,7 @@
             {
                 $http({
                     method: 'POST',
-                    url: '/movies/search/normal',
+                    url: '/movies/search/advanced',
                     data: $scope.searchParams,
                     dataType: 'json'
                 }).then(function (data) {
