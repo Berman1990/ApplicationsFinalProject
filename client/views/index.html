@@ -84,18 +84,19 @@
                     <!--<li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">-->
                         <!--<a ui-sref="about">About us</a>-->
                     <!--</li>-->
-                    <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
+                    <!--<li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a ui-sref="login">Login</a>
                     </li>
                     <li ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a ui-sref="register">Register</a>
-                    </li>
+                    </li>-->
                     <li class="dropdown" ng-class="{active : activeMenu === item}" ng-click="setActive(this)">
                         <a class="dropbtn">Admin</a>
                         <div class="dropdown-content">
                             <a ui-sref="editCinemas">Edit Cinemas</a>
                             <a ui-sref="createCinemas">Create Cinemas</a>
                             <a ui-sref="deleteCinemas">Delete Cinemas</a>
+                            <a ui-sref="addMovie">Add New Movie</a>
                         </div>
                     </li>
                 </ul>
@@ -127,7 +128,7 @@
 <footer class="site-footer">
     <div class="row">
         <div class="col-lg-12">
-            <p>Copyright &copy; Berman Application Final Project</p>
+            <p>Copyright &copy; Bobi, Shapira & Berman Application Final Project</p>
         </div>
     </div>
 </footer>

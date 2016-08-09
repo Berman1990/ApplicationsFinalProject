@@ -67,7 +67,13 @@ uiRouterApp.config(function($stateProvider, $urlRouterProvider) {
                 url: '/deleteCinemas',
                 templateUrl: 'views/deleteCinemas.html',
                 controller: 'adminController'
-            });
+            })
+        .state('addMovie',
+        {
+            url: '/addMovie',
+            templateUrl: 'views/addMovie.html',
+            controller: 'adminController'
+        });
 });
 
 

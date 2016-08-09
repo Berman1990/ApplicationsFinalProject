@@ -36,6 +36,15 @@ adminApp.controller('adminController', function($scope, mapService, $http) {
             });
     };
 
+    $scope.addMovie = function(){
+        $http({
+            method: 'GET',
+            url: '/movies/new/' + $scope.movieName,
+        }).then(function () {
+            //$state.go('home');
+        });
+    };
+
     $scope.editCinema = function(){
 	    mapService.getLatLeng($scope.editedCinema.address, function(lat,lng) {
 			$scope.editedCinema.lat = lat;

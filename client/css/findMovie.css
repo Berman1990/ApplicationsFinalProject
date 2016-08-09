@@ -12,6 +12,10 @@ body {
     margin-bottom: 25px;
 }
 
+.mulline{
+    column-count: 2;
+}
+
 .poster-size
 {
     max-height: 300px;

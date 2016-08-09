@@ -86,9 +86,6 @@ function initAutocomplete() {
 	var searchBox = new google.maps.places.SearchBox(input);
 	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-	var input2 = document.getElementById('pac-radio');
-	map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input2);
-
 	// Bias the SearchBox results towards current map's viewport.
 	map.addListener('bounds_changed', function() {
 		searchBox.setBounds(map.getBounds());
