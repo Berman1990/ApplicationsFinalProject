@@ -261,16 +261,14 @@ h3 {
 .register input {
     width: 35%;
     margin-bottom: 10px;
-    background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
     padding: 10px;
     font-size: 13px;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    color: #000;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 4px;
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.15), 0 1px 1px rgba(255,255,255,0.15);
     -webkit-transition: box-shadow .5s ease;
     -moz-transition: box-shadow .5s ease;
     -o-transition: box-shadow .5s ease;
@@ -286,16 +284,14 @@ form{
 .createCinemas input {
     width: 60%;
     margin-bottom: 10px;
-    background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
     padding: 10px;
     font-size: 13px;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    color: #000;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 4px;
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.15), 0 1px 1px rgba(255,255,255,0.15);
     -webkit-transition: box-shadow .5s ease;
     -moz-transition: box-shadow .5s ease;
     -o-transition: box-shadow .5s ease;
@@ -309,22 +305,20 @@ form{
     text-align: center;
 }
 .login h1,
-.searchMovies h1{ color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+.searchMovies h1{ color: #000; letter-spacing:1px; text-align:center; }
 
 
 .login input{
     width: 35%;
     margin-bottom: 10px;
-    background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
     padding: 10px;
     font-size: 13px;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    color: #000;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 4px;
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.15), 0 1px 1px rgba(255,255,255,0.15);
     -webkit-transition: box-shadow .5s ease;
     -moz-transition: box-shadow .5s ease;
     -o-transition: box-shadow .5s ease;
@@ -335,16 +329,14 @@ form{
 .searchMovies input[type="text"]{
     width: 20%;
     margin-bottom: 10px;
-    background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
     padding: 10px;
     font-size: 13px;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    color: #000;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 4px;
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.15), 0 1px 1px rgba(255,255,255,0.15);
     -webkit-transition: box-shadow .5s ease;
     -moz-transition: box-shadow .5s ease;
     -o-transition: box-shadow .5s ease;
@@ -355,16 +347,14 @@ form{
 select {
     width: 60%;
     margin-bottom: 10px;
-    background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
     padding: 10px;
     font-size: 13px;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    color: #000;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 4px;
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.15), 0 1px 1px rgba(255,255,255,0.15);
     -webkit-transition: box-shadow .5s ease;
     -moz-transition: box-shadow .5s ease;
     -o-transition: box-shadow .5s ease;

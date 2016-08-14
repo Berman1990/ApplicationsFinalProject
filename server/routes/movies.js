@@ -38,7 +38,8 @@ router.get('/byGenre/:genre', function(req, res) {
 });
 
 router.get('/new/:movieName', function(req, res) {
-    getMoviefromService(req.param('movieName'));
+    getMoviefromService(req.param('movieName'), function(ret) {
+		res.send(ret)});
 });
 
 router.post('/search/normal', function(req, res) {
@@ -60,7 +61,7 @@ router.post('/search/advanced', function(req, res) {
     });
 });
 
-function getMoviefromService(movieName) {
+function getMoviefromService(movieName, callback) {
     var optionsget = {
         host : 'www.omdbapi.com',
         port : 80,
@@ -74,25 +75,38 @@ function getMoviefromService(movieName) {
 
         res.on('data', function(d) {
             console.info('GET result:\n');
-            //process.stdout.write(d);
-            console.log(JSON.parse(d));
-            var newMovie = new movie(JSON.parse(d));
-            newMovie.save(function (err) {
-                if (err) {
-                    console.log(err);
-                    return err;
-                }
-                else {
-                    console.log("Post saved");
-                }
-            });
-            console.info('\n\nCall completed');
+
+			try
+			{
+				//process.stdout.write(d);
+				console.log(JSON.parse(d));
+
+				var newMovie = new movie(JSON.parse(d));
+				newMovie.save(function (err) {
+					if (err) {
+						console.log(err);
+						//callback("נתוני הסרט לא נשמרו - נסו שוב מאוחר יותר")
+						return err;
+					}
+					else {
+						console.log("Post saved");
+					}
+				});
+				console.info('\n\nCall completed');
+				//callback("הסרט נשמר בהצלחה")
+			}
+			catch (err) 
+			{
+				console.log("\nCould not save the requested movie - ERROR!")
+				//callback("נתוני הסרט לא נשמרו - נסו שוב מאוחר יותר")
+			}
         });
     });
 
     reqGet.end();
     reqGet.on('error', function(e) {
         console.error(e);
+		//callback("נתוני הסרט לא נשמרו - נסו שוב מאוחר יותר")
     });
 }
 
